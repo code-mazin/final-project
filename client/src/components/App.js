@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import JobList from "../pages/JobList";
-import NewJob from "../pages/NewJob";
+
 
 
 function App() {
@@ -29,9 +29,6 @@ function App() {
             <Switch>
                 <Route path="/Login">
                     <Login onLogin={setUser} />
-                </Route>    
-                <Route path="/new">
-                    <NewJob user={user} />
                 </Route>
                 <Route exact path="/">
                     <JobList />

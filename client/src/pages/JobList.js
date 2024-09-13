@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Label, Box, Button } from "../styles";
+import { Box, Button } from "../styles";
 
 function JobList() {
     const [jobs, setJobs] = useState([]);
@@ -22,10 +22,9 @@ function JobList() {
                             <p>
                                 <em>Salary: {job.salary} $$</em>
                                 &nbsp;·&nbsp;
-                                <cite>Listed By {job.user.username}</cite>
+                                {/* <cite>Listed By {job.user.username}</cite> */}
                             </p>
-                            <Label>Work from Home</Label>
-                            <Button>Apply</Button>
+                        
                         </Box>
                     </Job>
                 ))

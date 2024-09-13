@@ -15,12 +15,9 @@ function NavBar({ user, setUser }) {
     return (
         <Wrapper>
             <Logo>
-                <Link to="/">Home</Link>
+                <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
-                <Button as={Link} to="/new">
-                    New Job
-                </Button>
                 <Button onClick={handleLogoutClick}>
                     Logout
                 </Button>

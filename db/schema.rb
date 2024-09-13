@@ -10,16 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_03_233543) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_31_035500) do
+  create_table "courses", force: :cascade do |t|
+    t.string "name"
+    t.string "technology"
+    t.integer "price"
+    t.integer "duration"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "enrolls", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "course_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "jobs", force: :cascade do |t|
     t.string "title"
     t.string "salary"
     t.string "technology"
     t.string "email"
-    t.string "user_id"
     t.boolean "work_from_home"
     t.boolean "published"
     t.integer "app_deadline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "seeks", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "job_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
