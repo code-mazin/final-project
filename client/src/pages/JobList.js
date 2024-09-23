@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { Box, Button } from "../styles";
+import { Box } from "../styles";
 
 function JobList() {
     const [jobs, setJobs] = useState([]);
@@ -20,9 +20,7 @@ function JobList() {
                         <Box>
                             <h2>{job.title}</h2>
                             <p>
-                                <em>Salary: {job.salary} $$</em>
-                                &nbsp;·&nbsp;
-                                {/* <cite>Listed By {job.user.username}</cite> */}
+                                <em>Salary: {job.salary} $</em>
                             </p>
                         
                         </Box>
@@ -31,9 +29,6 @@ function JobList() {
             ) : (
                 <>
                 <h2>No Jobs Found</h2>
-                <Button as={Link} to="/new">
-                    New Job Application
-                </Button>
             </>
             )}
         </Wrapper>

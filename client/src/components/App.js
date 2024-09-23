@@ -3,6 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import JobList from "../pages/JobList";
+import CourseList from "../pages/CourseList";
 
 
 
@@ -32,6 +33,9 @@ function App() {
                 </Route>
                 <Route exact path="/">
                     <JobList />
+                </Route>
+                <Route exact path="/courses">
+                    <CourseList />
                 </Route>        
             </Switch>
         

@@ -18,6 +18,9 @@ function NavBar({ user, setUser }) {
                 <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
+                <Button as={Link} to="/courses">
+                    Courses
+                </Button>
                 <Button onClick={handleLogoutClick}>
                     Logout
                 </Button>
