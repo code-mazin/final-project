@@ -15,9 +15,12 @@ function NavBar({ user, setUser }) {
     return (
         <Wrapper>
             <Logo>
-                <Link to="/">Den of Devs</Link>
+                <Link to="/">Den of Developers</Link>
             </Logo>
             <Nav>
+                <Button as={Link} to="/profile">
+                    Profile
+                </Button>
                 <Button as={Link} to="/courses">
                     Courses
                 </Button>

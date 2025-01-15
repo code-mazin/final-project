@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import JobList from "../pages/JobList";
 import CourseList from "../pages/CourseList";
+import Profile from "../pages/Profile";
 
 
 
@@ -36,6 +37,9 @@ function App() {
                 </Route>
                 <Route exact path="/courses">
                     <CourseList />
+                </Route>        
+                <Route exact path="/Profile">
+                    <Profile />
                 </Route>        
             </Switch>
         
