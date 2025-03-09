@@ -29,9 +29,6 @@ function App() {
         <NavBar user={user} setUser={setUser} />
         <main>
             <Switch>
-                <Route path="/Login">
-                    <Login onLogin={setUser} />
-                </Route>
                 <Route exact path="/">
                     <JobList />
                 </Route>
@@ -39,7 +36,7 @@ function App() {
                     <CourseList />
                 </Route>        
                 <Route exact path="/Profile">
-                    <Profile />
+                    <Profile user={user} />
                 </Route>        
             </Switch>
         

@@ -18,7 +18,7 @@ work_from_home: true, published: true)
 job2 = Job.create(title: "React Developer", salary: "90,000", technology: "React", email: "AcademyXi@x.com",
 work_from_home: true, published: true)
 
-job3 = Job.create(title: "NodeJs Developer", salary: "95,000", technology: "React Native", email: "AcademyXi@x.com",
+job3 = Job.create(title: "NodeJs Developer", salary: "95,000", technology: "NodeJs", email: "AcademyXi@x.com",
 work_from_home: true, published: true)
 
 job4 = Job.create(title: "JavaScript Developer", salary: "100,000", technology: "JavaScript", email: "AcademyXi@x.com",
@@ -30,17 +30,19 @@ work_from_home: false, published: true)
 job6 = Job.create(title: "Ruby Developer", salary: "100,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
 work_from_home: false, published: true)
 
-job7 = Job.create(title: "React Developer", salary: "110,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
+job7 = Job.create(title: "React Developer", salary: "110,000", technology: "React", email: "AcademyXi@x.com",
 work_from_home: false, published: true)
 
-job8 = Job.create(title: "NodeJs Developer", salary: "100,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
+job8 = Job.create(title: "NodeJs Developer", salary: "100,000", technology: "NodeJs", email: "AcademyXi@x.com",
 work_from_home: false, published: true)
 
-job9 = Job.create(title: "JavaScript Developer", salary: "90,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
+job9 = Job.create(title: "JavaScript Developer", salary: "90,000", technology: "JavaScript", email: "AcademyXi@x.com",
 work_from_home: false, published: true)
 
 job10 = Job.create(title: "Ruby on Rails Developer", salary: "100,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
 work_from_home: false, published: true)
+
+puts "🏕 Seeding courses..."
 
 course1 = Course.create(name: "FrontEnd Development", technology: "React", price: 5000, duration: 6)
 

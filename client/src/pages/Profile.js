@@ -5,7 +5,9 @@ import React from "react";
 
 function Profile() {
     return (
-        <h1>Big Dog</h1>
+        <div>
+            <h1>Big Dog</h1>
+        </div>
     )
 }
 

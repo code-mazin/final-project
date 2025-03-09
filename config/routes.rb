@@ -14,12 +14,10 @@ Rails.application.routes.draw do
   get '/jobs', to: 'jobs#index'
   # get '/jobs/:id', to: 'jobs#show'
   get "/me", to: "users#show"
+  post "/signup", to: "users#create"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
-  post "/signup", to: "users#create"
-
   post "/seeks", to:"seeks#create"
-  
   get "courses", to: "courses#index"
   post "enrolls", to:"enrolls#create"
 end

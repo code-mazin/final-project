@@ -74,7 +74,7 @@ function SignUpForm({ onLogin }) {
                 />
             </FormField>
             <FormField>
-                <Button type="submit">{isLoading ? "Loading..." : "Sign UP"}</Button>
+                <Button type="submit">{isLoading ? "Loading..." : "Sign up"}</Button>
             </FormField>
             <FormField>
                 {errors.map((err) => (
