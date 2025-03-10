@@ -11,6 +11,11 @@ class UsersController < ApplicationController
         render json: @current_user
     end
 
+    def update
+        @current_user.update!(user_params_update)
+        render json: @current_user, status: :accepted
+    end
+
     # def destroy
     #     user = User.find_by(id: params[:id])
     #     if user
@@ -25,5 +30,9 @@ class UsersController < ApplicationController
 
     def user_params
         params.permit(:username, :password, :password_confirmation)
+    end
+
+    def user_params_update
+        params.permit(:bio, :email, :age, :years_of_exp)
     end
 end

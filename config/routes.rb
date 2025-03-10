@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   # get '/jobs/:id', to: 'jobs#show'
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
+  patch "/me", to: "users#update"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   post "/seeks", to:"seeks#create"

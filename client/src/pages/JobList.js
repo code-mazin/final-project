@@ -33,27 +33,6 @@ function JobList() {
 
     return (
         <Wrapper>
-            <form onSubmit={handleSubmit}>
-            <Box>
-            <FormField>
-            <h2>Job application</h2>
-            <Label htmlFor="job_id">Job ID:</Label>
-            <Input
-                type="text"
-                placeholder="Enter Job ID..."
-                id="job_id"
-                autoComplete="off"
-                value={job_id}
-                onChange={(e) => setJob_id(e.target.value)}
-            />
-            </FormField>
-            <FormField>
-                <Button variant="fill" color="primary" type="submit">
-                    {isLoading ? "Loading..." : "Apply"}
-                </Button>
-            </FormField>
-            </Box>
-            </form>
             {jobs.length > 0 ? (
                 jobs.map((job) => (
                     <Job key={job.id}>
@@ -76,6 +55,27 @@ function JobList() {
                 <h2>No Jobs Found</h2>
             </>
             )}
+            <form onSubmit={handleSubmit}>
+                <Box>
+                    <FormField>
+                        <h2>Job application</h2>
+                            <Label htmlFor="job_id">Job ID:</Label>
+                            <Input
+                                type="text"
+                                placeholder="Enter Job ID..."
+                                id="job_id"
+                                autoComplete="off"
+                                value={job_id}
+                                onChange={(e) => setJob_id(e.target.value)}
+                            />
+                    </FormField>
+                    <FormField>
+                        <Button variant="fill" color="primary" type="submit">
+                            {isLoading ? "Loading..." : "Apply"}
+                        </Button>
+                    </FormField>
+                </Box>
+            </form>
         </Wrapper>
     );
 }
