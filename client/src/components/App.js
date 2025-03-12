@@ -36,7 +36,7 @@ function App() {
                     <CourseList />
                 </Route>        
                 <Route exact path="/Profile">
-                    <Profile user={user} />
+                    <Profile user={user} setUser={setUser} />
                 </Route>        
             </Switch>
         

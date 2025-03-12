@@ -58,7 +58,7 @@ function JobList() {
             <form onSubmit={handleSubmit}>
                 <Box>
                     <FormField>
-                        <h2>Job application</h2>
+                        <h2>Job Application</h2>
                             <Label htmlFor="job_id">Job ID:</Label>
                             <Input
                                 type="text"

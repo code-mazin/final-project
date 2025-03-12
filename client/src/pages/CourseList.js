@@ -61,7 +61,7 @@ function CourseList() {
                 <form onSubmit={handleSubmit}>
                 <Box>
                     <FormField>
-                        <h2>Course Enroll</h2>
+                        <h2>Course Enrollment</h2>
                             <Label htmlFor="course_id"> Course ID:</Label>
                             <Input
                                 type="text"
