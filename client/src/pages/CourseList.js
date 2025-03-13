@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Box, Input, FormField, Label, Button } from "../styles";
 
-function CourseList() {
+function CourseList({setUser}) {
     const [courses, setCourses] = useState([]);
     const [course_id, setCourse_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -17,7 +17,7 @@ function CourseList() {
     function handleSubmit(e) {
         e.preventDefault();
         setIsLoading(true);
-        fetch("/courses", {
+        fetch("/enrolls", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -27,6 +27,11 @@ function CourseList() {
             setIsLoading(false);
             if (r.ok) {
                 setCourse_id("");
+                fetch("/me").then((r) => {
+                    if (r.ok) {
+                        r.json().then((user) => setUser(user))
+                    }
+                });
             }
         })
     }

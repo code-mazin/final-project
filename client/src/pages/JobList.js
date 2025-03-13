@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Box, Input, FormField, Label, Button } from "../styles";
 
-function JobList() {
+function JobList({user, setUser}) {
     const [jobs, setJobs] = useState([]);
     const [job_id, setJob_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -27,6 +27,11 @@ function JobList() {
             setIsLoading(false);
             if (r.ok) {
                 setJob_id("");
+                fetch("/me").then((r) => {
+                    if (r.ok) {
+                        r.json().then((user) => setUser(user))
+                    }
+                });
             }
         })
     }

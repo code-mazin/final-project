@@ -30,10 +30,10 @@ function App() {
         <main>
             <Switch>
                 <Route exact path="/">
-                    <JobList />
+                    <JobList user={user} setUser={setUser} />
                 </Route>
                 <Route exact path="/courses">
-                    <CourseList />
+                    <CourseList setUser={setUser} />
                 </Route>        
                 <Route exact path="/Profile">
                     <Profile user={user} setUser={setUser} />
