@@ -9,6 +9,8 @@ function Profile({user, setUser}) {
     const [age, setAge] = useState([]);
     const [years_of_exp, setYears_of_exp] = useState([]);
     // const history = useHistory();
+    // const [enrolls, setEnrolls] = useState([]);
+    
     
     function handleSubmit(e) {
         e.preventDefault();
@@ -39,6 +41,18 @@ function Profile({user, setUser}) {
         })
         
     }
+
+    // function handleDeleteEnroll(id) {
+    //     fetch(`/enrolls/${id}`, {
+    //         method: "DELETE",
+    //     }).then((r) => {
+    //         if (r.ok) {
+    //             setEnrolls((enrolls) =>
+    //             enrolls.filter((enroll) => enroll.id !== id)
+    //         );
+    //         }
+    //     });
+    // }
     
     return (
         <Wrapper>
@@ -61,7 +75,8 @@ function Profile({user, setUser}) {
                 <ul>
                     {user.courses.map((course) => (
                         <li key={course.id}>
-                            {course.name}
+                            <span>{course.name}</span>
+                            {/* <p>Enroll ID: {enrolls.id}</p> */}
                         </li>
                     ))}
                 </ul>
