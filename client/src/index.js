@@ -5,6 +5,8 @@ import App from "./components/App";
 import { BrowserRouter } from "react-router-dom";
 import { createGlobalStyle } from "styled-components";
 
+
+
 const GlobalStyle = createGlobalStyle`
   *,
   *::before, 

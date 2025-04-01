@@ -7,6 +7,8 @@ function JobList({user, setUser}) {
     const [jobs, setJobs] = useState([]);
     const [job_id, setJob_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const EMPTY_HEART = '♡'
+    const FULL_HEART = '♥'
 
     useEffect(() => {
         fetch("/jobs")
@@ -36,6 +38,17 @@ function JobList({user, setUser}) {
         })
     }
 
+    function likeSwitch(e) {
+        const heart = e.target;
+        if ( heart.innerText === EMPTY_HEART) {
+            heart.innerText = FULL_HEART;
+            heart.className = "activated-heart";
+        } else {
+            heart.innerText = EMPTY_HEART;
+            heart.className = "Like! ♡";
+        }
+    }
+
     return (
         <Wrapper>
             {jobs.length > 0 ? (
@@ -52,6 +65,10 @@ function JobList({user, setUser}) {
                             <p>
                                 <em>Technology: {job.technology}</em>
                             </p>
+                            <Divider/>
+                            <footer>
+                                    <span>Like! <span onClick={(likeSwitch)}>&#x2661;</span></span> 
+                            </footer>
                         </Box>
                     </Job>
                 ))
@@ -92,6 +109,12 @@ const Wrapper = styled.section`
 
 const Job = styled.article`
   margin-bottom: 24px;
+`;
+
+const Divider = styled.hr`
+  border: none;
+  border-bottom: 1px solid #ccc;
+  margin: 16px 0;
 `;
 
 export default JobList;

@@ -7,6 +7,8 @@ function CourseList({setUser}) {
     const [courses, setCourses] = useState([]);
     const [course_id, setCourse_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const EMPTY_HEART = '♡'
+    const FULL_HEART = '♥'
 
     useEffect(() => {
         fetch("/courses")
@@ -36,6 +38,17 @@ function CourseList({setUser}) {
         })
     }
 
+    function likeSwitch(e) {
+        const heart = e.target;
+        if ( heart.innerText === EMPTY_HEART) {
+            heart.innerText = FULL_HEART;
+            heart.className = "activated-heart";
+        } else {
+            heart.innerText = EMPTY_HEART;
+            heart.className = "Like! ♡"
+        }
+    }
+
     return (
         <Wrapper>
             {courses.length > 0 ? (
@@ -55,6 +68,10 @@ function CourseList({setUser}) {
                             <p>
                                 <em>Price: {course.price} $</em>
                             </p>
+                            <Divider/>
+                            <footer>
+                                <span>Like! <span onClick={(likeSwitch)}>&#x2661;</span></span>
+                            </footer>
                         </Box>
                     </Course>
                 ))
@@ -96,5 +113,11 @@ const Wrapper = styled.section`
 const Course = styled.article`
   margin-bottom 24px;
 `;
+ 
+const Divider = styled.hr`
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin: 16px 0;
+    `;
 
 export default CourseList
