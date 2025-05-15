@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Input, FormField, Label, Button } from "../styles";
 
@@ -64,6 +64,9 @@ function JobList({user, setUser}) {
                             </p>
                             <p>
                                 <em>Technology: {job.technology}</em>
+                            </p>
+                            <p>
+                                <Link to={`/jobs/${job.id}`}>Read More...</Link>
                             </p>
                             <Divider/>
                             <footer>

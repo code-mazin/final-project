@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   # root "posts#index"
   # resources :jobs, only: [:index, :create, :update, :destroy]
   get '/jobs', to: 'jobs#index'
-  # get '/jobs/:id', to: 'jobs#show'
+  get '/jobs/:id', to: 'jobs#show'
   get "/me", to: "users#show"
   post "/signup", to: "users#create"
   patch "/me", to: "users#update"
@@ -21,5 +21,11 @@ Rails.application.routes.draw do
   post "/seeks", to:"seeks#create"
   get "/courses", to: "courses#index"
   post "/enrolls", to:"enrolls#create"
-  delete "/enrolls", to:"enrolls#destroy"
+  # delete "/enrolls", to:"enrolls#destroy"
 end
+
+
+
+
+
+

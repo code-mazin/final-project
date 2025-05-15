@@ -76,7 +76,9 @@ function Profile({user, setUser}) {
                     {user.courses.map((course) => (
                         <li key={course.id}>
                             <span>{course.name}</span>
-                            {/* <p>Enroll ID: {enrolls.id}</p> */}
+                            {/* <button onClick={() => handleDeleteEnroll(course.id)}>
+                                Delete
+                            </button> */}
                         </li>
                     ))}
                 </ul>

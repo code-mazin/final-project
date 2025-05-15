@@ -18,10 +18,12 @@ function NavBar({ user, setUser }) {
                 <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
-                <Button as={Link} to="/courses">
+                <Button as={Link} to="/courses"
+                activeStyle={{background: "lightblue"}}>
                     Courses
                 </Button>
-                <Button as={Link} to="/profile">
+                <Button as={Link} to="/profile"
+                activeStyle={{background: "darkblue"}}>
                     Profile
                 </Button>
                 <Button onClick={handleLogoutClick}>

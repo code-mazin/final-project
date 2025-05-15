@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import JobList from "../pages/JobList";
 import CourseList from "../pages/CourseList";
 import Profile from "../pages/Profile";
+import JobShow from "../pages/JobShow";
 
 
 
@@ -37,7 +38,10 @@ function App() {
                 </Route>        
                 <Route exact path="/Profile">
                     <Profile user={user} setUser={setUser} />
-                </Route>        
+                </Route>  
+                <Route exact path="/jobs/:id">
+                    <JobShow />
+                </Route>      
             </Switch>
         
         </main>
