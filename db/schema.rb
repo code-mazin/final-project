@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_05_05_024707) do
+ActiveRecord::Schema[7.1].define(version: 2025_06_25_152303) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "technology"
@@ -25,6 +25,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_05_024707) do
     t.integer "course_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ideas", force: :cascade do |t|
+    t.string "idea"
+    t.string "details"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "user_id", null: false
   end
 
   create_table "jobs", force: :cascade do |t|

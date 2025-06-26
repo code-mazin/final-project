@@ -18,13 +18,14 @@ function NavBar({ user, setUser }) {
                 <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
-                <Button as={Link} to="/courses"
-                activeStyle={{background: "lightblue"}}>
+                <Button as={Link} to="/courses">
                     Courses
                 </Button>
-                <Button as={Link} to="/profile"
-                activeStyle={{background: "darkblue"}}>
+                <Button as={Link} to="/profile">
                     Profile
+                </Button>
+                <Button as={Link} to="/Ideas">
+                    Ideas
                 </Button>
                 <Button onClick={handleLogoutClick}>
                     Logout
@@ -44,7 +45,7 @@ const Wrapper = styled.header`
 `;
 
 const Logo = styled.h1`
-//   font-family: "Permanent Marker", cursive;
+  font-family: "Permanent Marker", cursive;
   font-size: 3rem;
   color: blue;
   margin: 0;

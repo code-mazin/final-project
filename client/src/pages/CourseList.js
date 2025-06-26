@@ -51,6 +51,7 @@ function CourseList({setUser}) {
 
     return (
         <Wrapper>
+            <Logo>Courses:</Logo>
             {courses.length > 0 ? (
                 courses.map((course) => (
                     <Course key={course.id}>
@@ -118,6 +119,20 @@ const Divider = styled.hr`
     border: none;
     border-bottom: 1px solid #ccc;
     margin: 16px 0;
-    `;
+`;
+
+const Logo = styled.h2`
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
+  color: black;
+  margin: 0;
+  line-height: 1;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
+
 
 export default CourseList

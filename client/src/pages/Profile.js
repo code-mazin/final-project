@@ -56,8 +56,8 @@ function Profile({user, setUser}) {
     
     return (
         <Wrapper>
+            <Logo>Profile:</Logo>
             <Box>
-                <h1>Profile</h1>
                 <p>Username: {user.username}</p>
                 <p>Bio: {user.bio}</p>
                 <p>Email: {user.email}</p>
@@ -156,10 +156,23 @@ function Profile({user, setUser}) {
     );
     }
     
-    const Wrapper = styled.section`
-        max-width: 800px;
-        margin: 40px auto;
-    `;
+const Wrapper = styled.section`
+    max-width: 800px;
+    margin: 40px auto;
+`;
+
+const Logo = styled.h2`
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
+  color: black;
+  margin: 0;
+  line-height: 1;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+`;
 
 
 export default Profile;

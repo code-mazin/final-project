@@ -51,6 +51,7 @@ function JobList({user, setUser}) {
 
     return (
         <Wrapper>
+            <Logo>Jobs:</Logo>
             {jobs.length > 0 ? (
                 jobs.map((job) => (
                     <Job key={job.id}>
@@ -118,6 +119,19 @@ const Divider = styled.hr`
   border: none;
   border-bottom: 1px solid #ccc;
   margin: 16px 0;
+`;
+
+const Logo = styled.h2`
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
+  color: black;
+  margin: 0;
+  line-height: 1;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default JobList;

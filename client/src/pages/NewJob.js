@@ -1,3 +1,4 @@
+// This component is not rendered.
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
