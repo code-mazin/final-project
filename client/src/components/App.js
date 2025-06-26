@@ -6,6 +6,8 @@ import JobList from "../pages/JobList";
 import CourseList from "../pages/CourseList";
 import Profile from "../pages/Profile";
 import JobShow from "../pages/JobShow";
+import IdeaList from "../pages/IdeaList";
+import NewIdea from "../pages/NewIdea";
 
 
 
@@ -41,7 +43,13 @@ function App() {
                 </Route>  
                 <Route exact path="/jobs/:id">
                     <JobShow />
-                </Route>      
+                </Route>     
+                <Route exact path="/ideas">
+                    <IdeaList/>
+                </Route> 
+                <Route exact path="/new">
+                    <NewIdea user={user}/>
+                </Route>
             </Switch>
         
         </main>
