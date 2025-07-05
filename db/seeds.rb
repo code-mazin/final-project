@@ -64,10 +64,10 @@ a permanent opportunity for a Mid level Ruby Developer to join the team. This is
 
 puts "🏕 Seeding courses..."
 
-course1 = Course.create(name: "FrontEnd Development", technology: "React", price: 5000, duration: 6)
+course1 = Course.create(name: "FrontEnd Development", technology: "React", price: 5000, duration: 60)
 
-course2 = Course.create(name: "BackEnd Development", technology: "Ruby", price: 8000, duration: 12)
+course2 = Course.create(name: "BackEnd Development", technology: "Ruby", price: 8000, duration: 120)
 
-course3 = Course.create(name: "React Course", technology: "React", price: 8000, duration: 12)
+course3 = Course.create(name: "React Course", technology: "React", price: 8000, duration: 120)
 
 puts "✅ Done seeding!"

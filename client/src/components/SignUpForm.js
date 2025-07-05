@@ -69,6 +69,7 @@ function SignUpForm({ onLogin }) {
                 <Textarea
                     rows="3"
                     id="bio"
+                    placeholder="Optional"
                     value={bio}
                     onChange={(e) => setBio(e.target.value)}
                 />
