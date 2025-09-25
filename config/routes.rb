@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :ideas, only: [:index, :create]
-  resources :enrolls
+  # resources :enrolls
   resources :courses
   resources :seeks
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import {Box} from "../styles"
 
@@ -11,6 +12,7 @@ function JobShow (){
         status: "pending",
     });
     const { id } = useParams();
+    
 
     useEffect(() => {
         fetch(`/jobs/${id}`).then((r) => {
@@ -44,6 +46,9 @@ function JobShow (){
                 </p>
                 <p>
                     <em>Description: {job.desc}</em>
+                </p>
+                <p>
+                    <Link to={"/"}>Back ...</Link>
                 </p>
             </Box>
         </Wrapper>

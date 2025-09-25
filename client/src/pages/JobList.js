@@ -1,12 +1,13 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Box, Input, FormField, Label, Button } from "../styles";
 
-function JobList({user, setUser}) {
+function JobList() {
     const [jobs, setJobs] = useState([]);
     const [job_id, setJob_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+    const history = useHistory();
     const EMPTY_HEART = '♡'
     const FULL_HEART = '♥'
 
@@ -29,11 +30,7 @@ function JobList({user, setUser}) {
             setIsLoading(false);
             if (r.ok) {
                 setJob_id("");
-                fetch("/me").then((r) => {
-                    if (r.ok) {
-                        r.json().then((user) => setUser(user))
-                    }
-                });
+                history.push('/');
             }
         })
     }
