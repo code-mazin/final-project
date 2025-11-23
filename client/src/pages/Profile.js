@@ -1,22 +1,22 @@
-// import { useHistory } from "react-router-dom";
-import { useState, useEffect} from "react";
+import { useState} from "react";
 import styled from "styled-components";
 import { Box, Button, FormField, Input, Label } from "../styles";
 
 function Profile({user, setUser}) {
-    const [bio, setBio] = useState([]);
-    const [email, setEmail] = useState([]);
-    const [age, setAge] = useState([]);
-    const [years_of_exp, setYears_of_exp] = useState([]);
+    const [bio, setBio] = useState("");
+    const [email, setEmail] = useState("");
+    const [age, setAge] = useState("");
+    const [years_of_exp, setYears_of_exp] = useState("");
+
     
-    useEffect(() => {
-            // update user data
-            fetch("/me").then((r) => {
-                if (r.ok) {
-                    r.json().then((user) => setUser(user))
-                }
-            });
-        }, []);
+    // useEffect(() => {
+    //         // update user data
+    //         fetch("/me").then((r) => {
+    //             if (r.ok) {
+    //                 r.json().then((user) => setUser(user))
+    //             }
+    //         });
+    //     }, []);
     
     function handleSubmit(e) {
         e.preventDefault();
@@ -33,10 +33,15 @@ function Profile({user, setUser}) {
                 }),
         }).then((r) => {
             if (r.ok) {
-                setBio("");
-                setEmail("");
-                setAge("");
-                setYears_of_exp("");
+                r.json().then(updatedUser => {
+                    setUser(updatedUser);
+                    setBio("");
+                    setEmail("");
+                    setAge("");
+                    setYears_of_exp("");    
+                }) 
+                
+                
             }
         })
         
