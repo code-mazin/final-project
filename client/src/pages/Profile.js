@@ -7,16 +7,6 @@ function Profile({user, setUser}) {
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
     const [years_of_exp, setYears_of_exp] = useState("");
-
-    
-    // useEffect(() => {
-    //         // update user data
-    //         fetch("/me").then((r) => {
-    //             if (r.ok) {
-    //                 r.json().then((user) => setUser(user))
-    //             }
-    //         });
-    //     }, []);
     
     function handleSubmit(e) {
         e.preventDefault();

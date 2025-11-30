@@ -5,12 +5,6 @@ class EnrollsController < ApplicationController
     render json: enroll.course, status: :created
   end
 
-  def destroy
-    enroll = find_enroll
-    enroll.destroy
-    head :no_content
-  end
-
 
   private
 
@@ -18,7 +12,5 @@ class EnrollsController < ApplicationController
     params.permit(:course_id)
   end
 
-  def find_enroll
-    Enroll.find(params[:id])
-  end
+
 end
