@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_06_25_152303) do
+ActiveRecord::Schema[7.1].define(version: 2025_12_01_230451) do
   create_table "courses", force: :cascade do |t|
     t.string "name"
     t.string "technology"
@@ -65,6 +65,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_06_25_152303) do
     t.integer "years_of_exp"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin"
   end
 
 end

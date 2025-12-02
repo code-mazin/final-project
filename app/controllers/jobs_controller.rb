@@ -1,6 +1,7 @@
 class JobsController < ApplicationController
     
     skip_before_action :authorize, only: :index
+    before_action :authorize_admin, only: :create
 
     def index 
         render json: Job.all
@@ -9,6 +10,11 @@ class JobsController < ApplicationController
     def show
         job = Job.find_by(id: params[:id])
         render json: job, serializer: JobWithDescSerializer
+    end
+
+    def create
+        job = Job.create!(job_params)
+        render json: job, status: :created
     end
 
 
