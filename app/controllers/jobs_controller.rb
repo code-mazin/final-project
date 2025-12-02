@@ -21,10 +21,11 @@ class JobsController < ApplicationController
     private
 
     def job_params
-        params.permit(:title, :salary)
+        params.permit(:title, :salary, :technology, :desc)
     end
 
     def find_job
         Job.find(params[:id])
     end
 end
+
