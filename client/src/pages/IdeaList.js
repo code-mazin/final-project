@@ -31,12 +31,12 @@ function IdeaList() {
             ) : (
                 <>
                 <h2>No Ideas Found</h2>
-                <Button as={Link} to="/new">
+                <Button as={Link} to="/new-idea">
                     new idea
                 </Button>
                 </>
             )}
-            <Button as={Link} to="/new">
+            <Button as={Link} to="/new-idea">
                 New Idea
             </Button>
         </Wrapper>

@@ -27,6 +27,9 @@ function NavBar({ user, setUser }) {
                 <Button as={Link} to="/Ideas">
                     Ideas
                 </Button>
+                <Button as={Link} to="/new-job">
+                    New Job
+                </Button>
                 <Button onClick={handleLogoutClick}>
                     Logout
                 </Button>

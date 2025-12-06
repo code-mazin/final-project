@@ -21,7 +21,7 @@ class JobsController < ApplicationController
     private
 
     def job_params
-        params.permit(:title, :salary, :technology, :desc)
+        params.permit(:title, :salary, :technology, :desc, :email, :work_from_home)
     end
 
     def find_job

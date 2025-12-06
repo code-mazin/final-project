@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import JobShow from "../pages/JobShow";
 import IdeaList from "../pages/IdeaList";
 import NewIdea from "../pages/NewIdea";
+import NewJob from "../pages/NewJob";
 
 
 
@@ -48,8 +49,11 @@ function App() {
                 <Route exact path="/ideas">
                     <IdeaList/>
                 </Route> 
-                <Route exact path="/new">
+                <Route exact path="/new-idea">
                     <NewIdea user={user}/>
+                </Route>
+                <Route exact path="/new-job">
+                    <NewJob user={user} />
                 </Route>
             </Switch>
         
