@@ -18,12 +18,18 @@ function JobList() {
                 jobs.map((job) => (
                     <Job key={job.id}>
                         <Box>
-                            <h2>{job.title}</h2>
+                            <em><h2>{job.title}</h2></em>
                             <p>
-                                <em>Salary: {job.salary} $</em>
+                                <em><strong>Salary:</strong> {job.salary} $</em>
                             </p>
                             <p>
-                                <em>Technology: {job.technology}</em>
+                                <em><strong>Technology:</strong> {job.technology}</em>
+                            </p>
+                            <p>
+                                <em><strong>Employer Email:</strong> {job.email}</em>
+                            </p>
+                            <p>
+                                <em><strong>Description:</strong> {job.desc}</em>
                             </p>
                             <Divider/>
                         </Box>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :jobs, only: [:index, :show, :create]
+  resources :jobs, only: [:index, :create]
   resources :ideas, only: [:index, :create]
   resources :courses, only: [:index]
   resources :seeks, only: [:create]
