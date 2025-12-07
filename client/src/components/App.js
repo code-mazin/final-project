@@ -52,9 +52,12 @@ function App() {
                 <Route exact path="/new-idea">
                     <NewIdea user={user}/>
                 </Route>
-                <Route exact path="/new-job">
-                    <NewJob user={user} />
-                </Route>
+                {user.admin && (
+                    <Route exact path="/new-job">
+                        <NewJob user={user} />
+                    </Route>
+                )}
+                
             </Switch>
         
         </main>
