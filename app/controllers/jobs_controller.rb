@@ -7,11 +7,6 @@ class JobsController < ApplicationController
         render json: Job.all
     end
 
-    def show
-        job = Job.find_by(id: params[:id])
-        render json: job, serializer: JobWithDescSerializer
-    end
-
     def create
         job = Job.create!(job_params)
         render json: job, status: :created

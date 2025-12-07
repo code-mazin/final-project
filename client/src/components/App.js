@@ -5,7 +5,6 @@ import Login from "../pages/Login";
 import JobList from "../pages/JobList";
 import CourseList from "../pages/CourseList";
 import Profile from "../pages/Profile";
-import JobShow from "../pages/JobShow";
 import IdeaList from "../pages/IdeaList";
 import NewIdea from "../pages/NewIdea";
 import NewJob from "../pages/NewJob";
@@ -43,9 +42,6 @@ function App() {
                 <Route exact path="/Profile">
                     <Profile user={user} setUser={setUser} />
                 </Route>  
-                <Route exact path="/jobs/:id">
-                    <JobShow />
-                </Route>     
                 <Route exact path="/ideas">
                     <IdeaList/>
                 </Route> 
