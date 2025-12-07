@@ -8,9 +8,7 @@ function JobList() {
     const [job_id, setJob_id] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
-    const EMPTY_HEART = '♡'
-    const FULL_HEART = '♥'
-
+    
     useEffect(() => {
         fetch("/jobs")
         .then((r) => r.json())
@@ -35,17 +33,6 @@ function JobList() {
         })
     }
 
-    function likeSwitch(e) {
-        const heart = e.target;
-        if ( heart.innerText === EMPTY_HEART) {
-            heart.innerText = FULL_HEART;
-            heart.className = "activated-heart";
-        } else {
-            heart.innerText = EMPTY_HEART;
-            heart.className = "Like! ♡";
-        }
-    }
-
     return (
         <Wrapper>
             <Logo>Jobs:</Logo>
@@ -67,9 +54,6 @@ function JobList() {
                                 <Link to={`/jobs/${job.id}`}>Read More...</Link>
                             </p>
                             <Divider/>
-                            <footer>
-                                    <span>Like! <span onClick={(likeSwitch)}>&#x2661;</span></span> 
-                            </footer>
                         </Box>
                     </Job>
                 ))
