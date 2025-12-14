@@ -1,6 +1,6 @@
 class User < ApplicationRecord
-    has_many :seeks
-    has_many :jobs, through: :seeks
+    has_many :job_applications
+    has_many :jobs, through: :job_applications
 
     has_many :enrolls
     has_many :courses, through: :enrolls

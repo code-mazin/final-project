@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Box } from "../styles";
+import { Box, Button } from "../styles";
+import { Link } from "react-router-dom"
 
 function JobList() {
     const [jobs, setJobs] = useState([]);
@@ -17,7 +18,7 @@ function JobList() {
             {jobs.length > 0 ? (
                 jobs.map((job) => (
                     <Job key={job.id}>
-                        <Box>
+                        <Box>  
                             <em><h2>{job.title}</h2></em>
                             <p>
                                 <em><strong>Salary:</strong> {job.salary} $</em>
@@ -32,6 +33,12 @@ function JobList() {
                                 <em><strong>Description:</strong> {job.desc}</em>
                             </p>
                             <Divider/>
+                            <Button 
+                                as={Link}
+                                to={`jobs/${job.id}/apply`}
+                            >
+                                Apply
+                            </Button>
                         </Box>
                     </Job>
                 ))

@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
-  resources :jobs, only: [:index, :create]
+  resources :jobs, only: [:index, :create, :show]
   resources :ideas, only: [:index, :create]
   resources :courses, only: [:index]
   resources :seeks, only: [:create]
+  resources :job_applications, only:[:create]
   # resources :enrolls
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

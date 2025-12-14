@@ -10,44 +10,30 @@ function Profile({user, setUser}) {
     
     function handleSubmit(e) {
         e.preventDefault();
+
+        const body = {};
+        if (bio) body.bio = bio;
+        if (email) body.email = email;
+        if (age) body.age = age;
+        if (years_of_exp) body.years_of_exp = years_of_exp;
+
         fetch("/me", {
-            method: 'PATCH',
-            headers: {
-                "Content-type": "application/json",
-            },
-            body: JSON.stringify({
-                bio,
-                email,
-                age,
-                years_of_exp
-                }),
+            method: "PATCH",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(body),
         }).then((r) => {
             if (r.ok) {
-                r.json().then(updatedUser => {
+                r.json().then((updatedUser) => {
                     setUser(updatedUser);
                     setBio("");
                     setEmail("");
                     setAge("");
-                    setYears_of_exp("");    
-                }) 
-                
-                
+                    setYears_of_exp("");
+                });
             }
-        })
-        
+        });
     }
 
-    // function handleDeleteEnroll(id) {
-    //     fetch(`/enrolls/${id}`, {
-    //         method: "DELETE",
-    //     }).then((r) => {
-    //         if (r.ok) {
-    //             setEnrolls((enrolls) =>
-    //             enrolls.filter((enroll) => enroll.id !== id)
-    //         );
-    //         }
-    //     });
-    // }
     
     return (
         <Wrapper>
@@ -60,23 +46,17 @@ function Profile({user, setUser}) {
                 <p>years of experience: {user.years_of_exp} years.</p>
                 <h3>Applied Jobs: </h3>
                 <ul>
-                    {user.jobs.map((job) => (
-                        <li key={job.id}>
-                            {job.title}
-                        </li>
+                    {user.jobs?.map((job) => (
+                        <li key={job.id}>{job.title}</li>
                     ))}
                 </ul>
-                <h3>Enrolled Courses: </h3>
+
                 <ul>
-                    {user.courses.map((course) => (
-                        <li key={course.id}>
-                            <span>{course.name}</span>
-                            {/* <button onClick={() => handleDeleteEnroll(course.id)}>
-                                Delete
-                            </button> */}
-                        </li>
+                    {user.courses?.map((course) => (
+                        <li key={course.id}>{course.name}</li>
                     ))}
                 </ul>
+
             </Box>
             
             <form onSubmit={handleSubmit}>
@@ -115,7 +95,7 @@ function Profile({user, setUser}) {
                         </div>
                     
                         <Input
-                            type="text"
+                            type="number"
                             id="age"
                             placeholder="Enter Age"
                             value={age}
