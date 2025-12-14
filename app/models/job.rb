@@ -1,7 +1,6 @@
 class Job < ApplicationRecord
-    # belongs_to :user
-    has_many :seeks
-    has_many :users, through: :seeks
+    has_many :job_applications
+    has_many :users, through: :job_applications
 
     validates :title, presence: true
 end

@@ -8,6 +8,7 @@ import Profile from "../pages/Profile";
 import IdeaList from "../pages/IdeaList";
 import NewIdea from "../pages/NewIdea";
 import NewJob from "../pages/NewJob";
+import JobApp from "../pages/JobApp";
 
 
 
@@ -53,6 +54,9 @@ function App() {
                         <NewJob user={user} />
                     </Route>
                 )}
+                <Route exact path="/jobs/:id/apply">
+                    <JobApp />
+                </Route>
                 
             </Switch>
         
