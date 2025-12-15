@@ -36,18 +36,6 @@ function Profile({user, setUser}) {
         })
         
     }
-
-    // function handleDeleteEnroll(id) {
-    //     fetch(`/enrolls/${id}`, {
-    //         method: "DELETE",
-    //     }).then((r) => {
-    //         if (r.ok) {
-    //             setEnrolls((enrolls) =>
-    //             enrolls.filter((enroll) => enroll.id !== id)
-    //         );
-    //         }
-    //     });
-    // }
     
     return (
         <Wrapper>
@@ -65,17 +53,7 @@ function Profile({user, setUser}) {
                             {job.title}
                         </li>
                     ))}
-                </ul>
-                <h3>Enrolled Courses: </h3>
-                <ul>
-                    {user.courses.map((course) => (
-                        <li key={course.id}>
-                            <span>{course.name}</span>
-                            {/* <button onClick={() => handleDeleteEnroll(course.id)}>
-                                Delete
-                            </button> */}
-                        </li>
-                    ))}
+
                 </ul>
             </Box>
             

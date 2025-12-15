@@ -10,29 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_12_01_230451) do
-  create_table "courses", force: :cascade do |t|
-    t.string "name"
-    t.string "technology"
-    t.integer "price"
-    t.integer "duration"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "enrolls", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "course_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+ActiveRecord::Schema[7.1].define(version: 2025_12_15_134338) do
   create_table "ideas", force: :cascade do |t|
     t.string "idea"
     t.string "details"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
+  end
+
+  create_table "job_applications", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "job_id", null: false
+    t.text "cover_letter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_job_applications_on_job_id"
+    t.index ["user_id"], name: "index_job_applications_on_user_id"
   end
 
   create_table "jobs", force: :cascade do |t|
@@ -68,4 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_01_230451) do
     t.boolean "admin"
   end
 
+  add_foreign_key "job_applications", "jobs"
+  add_foreign_key "job_applications", "users"
 end
