@@ -3,7 +3,6 @@ import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import JobList from "../pages/JobList";
-import CourseList from "../pages/CourseList";
 import Profile from "../pages/Profile";
 import IdeaList from "../pages/IdeaList";
 import NewIdea from "../pages/NewIdea";
@@ -37,9 +36,6 @@ function App() {
                 <Route exact path="/">
                     <JobList user={user} setUser={setUser} />
                 </Route>
-                <Route exact path="/courses">
-                    <CourseList setUser={setUser} />
-                </Route>        
                 <Route exact path="/Profile">
                     <Profile user={user} setUser={setUser} />
                 </Route>  

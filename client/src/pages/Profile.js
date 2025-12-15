@@ -33,7 +33,6 @@ function Profile({user, setUser}) {
             }
         });
     }
-
     
     return (
         <Wrapper>
@@ -48,12 +47,6 @@ function Profile({user, setUser}) {
                 <ul>
                     {user.jobs?.map((job) => (
                         <li key={job.id}>{job.title}</li>
-                    ))}
-                </ul>
-
-                <ul>
-                    {user.courses?.map((course) => (
-                        <li key={course.id}>{course.name}</li>
                     ))}
                 </ul>
 
