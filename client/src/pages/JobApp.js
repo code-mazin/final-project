@@ -2,11 +2,13 @@ import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
+import { useHistory } from "react-router-dom";
 
-function JobApp() {
+function JobApp({ setUser}) {
     const { id } = useParams();  // <--- this reads :id from "/jobs/:id/apply"
     const [job, setJob] = useState(null);
     const [coverLetter, setCoverLetter] = useState("");
+    const history = useHistory();
 
     // Load job details
     useEffect(() => {
@@ -29,8 +31,16 @@ function JobApp() {
             }),
         }).then((r) => {
             if (r.ok) {
-                alert("Application submitted!");
-                setCoverLetter("");
+                fetch("/me")
+                    .then((res) => res.json())
+                    .then((updatedUser) => {
+                        // update global user state
+                        setUser(updatedUser)
+                        alert("Application submitted!");
+                        setCoverLetter("");
+                        history.push("/profile");
+                    })
+                
             }
             else {
                 r.json().then(err => alert(err.errors.join(", ")))

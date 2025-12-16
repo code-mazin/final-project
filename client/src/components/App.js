@@ -51,7 +51,7 @@ function App() {
                     </Route>
                 )}
                 <Route exact path="/jobs/:id/apply">
-                    <JobApp />
+                    <JobApp setUser={setUser} />
                 </Route>
                 
             </Switch>
