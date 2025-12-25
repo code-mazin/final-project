@@ -27,6 +27,9 @@ function JobList() {
                                 <em><strong>Technology:</strong> {job.technology}</em>
                             </p>
                             <p>
+                                <em><strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"}</em> 
+                            </p>
+                            <p>
                                 <em><strong>Employer Email:</strong> {job.email}</em>
                             </p>
                             <p>

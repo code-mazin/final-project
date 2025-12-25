@@ -39,18 +39,15 @@ function JobApp({ setUser}) {
                         alert("Application submitted!");
                         setCoverLetter("");
                         history.push("/profile");
-                    })
-                
+                    })   
             }
             else {
                 r.json().then(err => alert(err.errors.join(", ")))
             }
-
         })
     }
     
     if (!job) return <p>Loading job details...</p>;
-
     return (
         <Wrapper>
             <Box>
@@ -59,11 +56,8 @@ function JobApp({ setUser}) {
                 <p><strong>Technology:</strong> {job.technology}</p>
                 <p><strong>Email:</strong> {job.email}</p>
                 <p><strong>Description:</strong> {job.desc}</p>
-
                 <Divider />
-
                 <h2>Your Application</h2>
-
                 <form onSubmit={handleSubmit}>
                     <label>
                         Cover Letter:
@@ -75,11 +69,9 @@ function JobApp({ setUser}) {
                             style={{width: "100%"}}
                         />
                     </label>
-
                     <Button type="submit" disabled={!coverLetter.trim()}>
                         Submit Application
                     </Button>
-
                 </form>
             </Box>
         </Wrapper>

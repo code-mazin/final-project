@@ -3,6 +3,7 @@ import { Button, Error, Input, FormField, Label, Textarea } from "../styles";
 
 function SignUpForm({ onLogin }) {
     const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [passwordConfirmation, setPasswordConfirmation] = useState("");
     const [bio, setBio] = useState("");
@@ -20,6 +21,7 @@ function SignUpForm({ onLogin }) {
             },
             body: JSON.stringify({
                 username,
+                email,
                 password,
                 passwordConfirmation: passwordConfirmation,
                 bio,
@@ -44,6 +46,16 @@ function SignUpForm({ onLogin }) {
                     autoComplete="off"
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
+                />
+            </FormField>
+            <FormField>
+                <Label htmlFor="email">E-mail</Label>
+                <Input
+                    type="text"
+                    id="email"
+                    autoComplete="off"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
                 />
             </FormField>
             <FormField>
