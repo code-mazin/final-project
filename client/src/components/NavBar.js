@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
 
@@ -18,14 +18,26 @@ function NavBar({ user, setUser }) {
                 <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
-                <Button as={Link} to="/profile">
+                <Button
+                    as={NavLink}
+                    to="/profile"
+                    activeClassname="active"
+                >
                     Profile
                 </Button>
-                <Button as={Link} to="/Ideas">
+                <Button
+                    as={NavLink}
+                    to="/ideas"
+                    activeClassname="active"
+                >
                     Ideas
                 </Button>
                 {user.admin && (
-                <Button as={Link} to="/new-job">
+                <Button
+                    as={NavLink}
+                    to="/new-job"
+                    activeClassname="active"
+                >
                     New Job
                 </Button>
                 )}
@@ -66,6 +78,12 @@ const Nav = styled.nav`
   gap: 4px;
   position: absolute;
   right: 8px;
+
+  .active {
+    background-color: #2563eb;
+    color: white:
+    border: 2px solid #1d4ed8;
+  }
 `;
 
 export default NavBar;
