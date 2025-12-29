@@ -37,6 +37,7 @@ function Profile({user, setUser}) {
     return (
         <Wrapper>
             <Logo>Profile:</Logo>
+            <br></br>
             <Box>
                 <p>Username: {user.username}</p>
                 <p>Bio: {user.bio}</p>
