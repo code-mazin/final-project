@@ -2,12 +2,8 @@ import styled from "styled-components";
 
 const COLORS = {
   primary: {
-    "--main": "indigo",
+    "--main": "#628141",
     "--accent": "white",
-  },
-  secondary: {
-    "--main": "lavenderblush",
-    "--accent": "indigo",
   },
 };
 
@@ -34,11 +30,14 @@ const ButtonBase = styled.button`
 const FillButton = styled(ButtonBase)`
   background-color: var(--main);
   color: var(--accent);
+  transition: background-color 0.2s ease, transform 0.1s ease;
 
   &:hover {
-    opacity: 0.9;
+    background-color: #556f36; /* darker shade of #628141 */
+    transform: translateY(-1px);
   }
 `;
+
 
 const OutlineButton = styled(ButtonBase)`
   background-color: white;

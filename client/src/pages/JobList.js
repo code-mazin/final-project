@@ -15,6 +15,7 @@ function JobList() {
     return (
         <Wrapper>
             <Logo>Jobs:</Logo>
+            <br></br>
             {jobs.length > 0 ? (
                 jobs.map((job) => (
                     <Job key={job.id}>

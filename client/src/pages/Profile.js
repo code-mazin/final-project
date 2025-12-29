@@ -51,6 +51,7 @@ function Profile({user, setUser}) {
                 </ul>
 
             </Box>
+            <br></br>
             
             <form onSubmit={handleSubmit}>
             <Box>

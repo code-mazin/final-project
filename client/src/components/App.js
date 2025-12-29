@@ -8,8 +8,15 @@ import IdeaList from "../pages/IdeaList";
 import NewIdea from "../pages/NewIdea";
 import NewJob from "../pages/NewJob";
 import JobApp from "../pages/JobApp";
+import { createGlobalStyle } from "styled-components";
 
-
+const GlobalStyle = createGlobalStyle`
+      body {
+    margin: 0;
+    background-color: #EBD5AB;
+    font-family: system-ui, sans-serif;
+  }
+`;
 
 function App() {
     const [user, setUser] = useState(null);
@@ -30,6 +37,7 @@ function App() {
     
     return (
         <>
+        <GlobalStyle />
         <NavBar user={user} setUser={setUser} />
         <main>
             <Switch>

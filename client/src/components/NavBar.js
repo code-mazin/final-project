@@ -63,7 +63,7 @@ const Wrapper = styled.header`
 const Logo = styled.h1`
   font-family: "Permanent Marker", cursive;
   font-size: 3rem;
-  color: blue;
+  color: #628141;
   margin: 0;
   line-height: 1;
 
@@ -80,9 +80,9 @@ const Nav = styled.nav`
   right: 8px;
 
   .active {
-    background-color: #2563eb;
+    background-color: #8BAE66;
     color: white:
-    border: 2px solid #1d4ed8;
+    border: 2px solid #1B211A;
   }
 `;
 
