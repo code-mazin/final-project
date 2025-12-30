@@ -9,6 +9,8 @@ def create
   JobApplicationMailer.confirmation_email(application).deliver_later
 
   render json: application, status: :created
+rescue ActiveREcord::RecordNotUnique, ActiveRecord::RecordInvalid
+  render json: { error: "You have already applied for this job" }, status: :unprocessable_entity
 end
 
 
