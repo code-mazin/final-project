@@ -10,7 +10,7 @@ function NewJob({ user }) {
     const [salary, setSalary] = useState("");
     const [technology, setTechnology] = useState("");
     const [email, setEmail] = useState("");
-    const [workFromHome, setWorkFromHome] = useState("");
+    const [workFromHome, setWorkFromHome] = useState(false);
     const [desc, setDesc] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -88,24 +88,25 @@ function NewJob({ user }) {
                         />
                     </FormField>
                     <FormField>
-                        <Label htmlFor="workFromHome">Work From Home</Label>
-                        <input 
-                            type="radio"
-                            id="workFromHome"
-                            value = "true"
-                            name="workFromHome"
-                            checked={workFromHome === "true"}
-                            onChange={(e) => setWorkFromHome(e.target.value === "true")}
-                        />
-                        <Label htmlFor="workFromOffice">Work from office</Label>
-                        <input 
-                            type="radio"
-                            id="workFromOffice"
-                            value = "false"
-                            name="workFromHome"
-                            checked={workFromHome === "false"}
-                            onChange={(e) => setWorkFromHome(e.target.value)}
-                        />
+                        <Label>Work Location</Label>
+                        <Label>
+                            <input
+                                type="radio"
+                                name="workFromHome"
+                                checked={workFromHome === true}
+                                onChange={() => setWorkFromHome(true)}
+                            />
+                            Work From Home
+                        </Label>
+                        <Label>
+                            <input
+                                type="radio"
+                                name="workFromHome"
+                                checked={workFromHome === false}
+                                onChange={() => setWorkFromHome(false)}
+                            />
+                            Work From Office
+                        </Label>
                     </FormField>
                     <FormField>
                         <Label htmlFor="desc">Description</Label>
@@ -134,10 +135,10 @@ function NewJob({ user }) {
                 <h3>{technology}</h3>
                 <h4>{salary} $</h4>
                 <h5>{email}</h5>
-                <p>
+                <h3>
                     <strong>Work From Home:</strong>{" "}
-                    {workFromHome === "true" ? "Yes" : workFromHome === "false" ? "no" : ""}
-                </p>
+                    {workFromHome ? "Yes" : "No"}
+                </h3>
                 <p>
                     <em>{desc}</em>
                 </p>

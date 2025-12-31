@@ -1,9 +1,9 @@
 import styled from "styled-components";
 
 const Label = styled.label`
-  color: white;
+  color: black;
   display: block;
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 700;
   margin-bottom: 8px;
 `;

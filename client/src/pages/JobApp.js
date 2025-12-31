@@ -54,6 +54,9 @@ function JobApp({ setUser}) {
                 <h1>Apply for: {job.title}</h1>
                 <p><strong>Salary</strong> {job.salary} $</p>
                 <p><strong>Technology:</strong> {job.technology}</p>
+                <p>
+                    <em><strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"}</em> 
+                </p>
                 <p><strong>Email:</strong> {job.email}</p>
                 <p><strong>Description:</strong> {job.desc}</p>
                 <Divider />
@@ -65,7 +68,7 @@ function JobApp({ setUser}) {
                             value={coverLetter}
                             onChange={(e) => setCoverLetter(e.target.value)}
                             required
-                            rows={6}
+                            rows={16}
                             style={{width: "100%"}}
                         />
                     </label>

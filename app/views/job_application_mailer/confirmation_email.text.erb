@@ -1,27 +1,27 @@
-<h1>Application Submitted Successfully 🎉</h1>
+Subject Application Submitted Successfully 🎉
 
-<p>Hi <%= @user.username %>,</p>
+Hi <%= @user.username %>,
 
-<p>
-  Thank you for applying for the <strong><%= @job.title %></strong> position.
-</p>
 
-<p>
-  <strong>Job Details:</strong><br />
-  Technology: <%= @job.technology %><br />
-  Salary: <%= @job.salary %> $
-</p>
+Thank you for applying for the <%= @job.title %> position.
 
-<p>
-  <strong>Your Cover Letter:</strong>
-</p>
+---
 
-<p>
-  <%= @application.cover_letter %>
-</p>
+Job Details:
+  
+Technology: <%= @job.technology %>
+Salary: <%= @job.salary %> $
 
-<p>
-  We’ve sent your application to the employer and will notify you if there are any updates.
-</p>
+---
 
-<p>Best of luck,<br />Den of Devs Team</p>
+Your Cover Letter:
+
+<%= @application.cover_letter %>
+
+---
+
+We’ve sent your application to the employer and will notify you if there are any updates.
+
+
+Best of luck,
+Den of Devs Team
