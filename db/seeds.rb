@@ -8,8 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 Job.delete_all
-Course.delete_all
-
 puts "🏕 Seeding jobs..."
 
 job1 = Job.create(title: "BackEnd Developer", salary: "100,000", technology: "Ruby on Rails", email: "AcademyXi@x.com", 
@@ -47,13 +45,5 @@ work_from_home: false, published: true, desc: "Our client is a software business
 a permanent opportunity for a Mid level NodeJs Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
-
-puts "🏕 Seeding courses..."
-
-course1 = Course.create(name: "FrontEnd Development", technology: "React", price: 5000, duration: 60)
-
-course2 = Course.create(name: "BackEnd Development", technology: "Ruby", price: 8000, duration: 120)
-
-course3 = Course.create(name: "React Course", technology: "React", price: 8000, duration: 120)
 
 puts "✅ Done seeding!"

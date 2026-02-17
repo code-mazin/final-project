@@ -61,7 +61,7 @@ const Wrapper = styled.header`
 `;
 
 const Logo = styled.h1`
-  font-family: "Permanent Marker", cursive;
+  font-family: "Times New Roman", cursive;
   font-size: 3rem;
   color: #628141;
   margin: 0;

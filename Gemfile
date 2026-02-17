@@ -5,6 +5,9 @@ ruby "2.7.4"
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+# dotenv gem
+gem "dotenv-rails", groups: [:development, :test]
+
 gem 'active_model_serializers'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
@@ -30,6 +33,6 @@ end
 group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  gem "letter_opener"
+  # gem "letter_opener"
 end
 

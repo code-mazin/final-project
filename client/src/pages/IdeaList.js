@@ -15,13 +15,14 @@ function IdeaList() {
     return (
         <Wrapper>
             <Logo>Ideas:</Logo>
+            <br></br>
             {ideas.length > 0 ? (
                 ideas.map((idea) => (
                     <Idea key={idea.id}>
                         <Box>
                             <h2>{idea.idea}</h2>
                             <p>
-                               <h4><em>Details: {idea.details}</em></h4>
+                               <h3>Details: {idea.details}</h3>
                                 &nbsp;·&nbsp;
                                 <cite>Suggested By {idea.user.username}</cite>
                             </p>
@@ -31,9 +32,6 @@ function IdeaList() {
             ) : (
                 <>
                 <h2>No Ideas Found</h2>
-                <Button as={Link} to="/new-idea">
-                    new idea
-                </Button>
                 </>
             )}
             <Button as={Link} to="/new-idea">
@@ -53,9 +51,9 @@ const Idea = styled.article`
 `;
 
 const Logo = styled.h2`
-  font-family: "Permanent Marker", cursive;
+  font-family: "Times New Roman", cursive;
   font-size: 3rem;
-  color: black;
+  color: #628141;
   margin: 0;
   line-height: 1;
 

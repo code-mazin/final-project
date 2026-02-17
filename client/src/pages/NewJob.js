@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
-import { Button, Error, FormField, Input, Label, Textarea } from "../styles";
+import { Button, Error, FormField, Input, Label, Textarea, Box } from "../styles";
 
 
 function NewJob({ user }) {
@@ -45,7 +45,9 @@ function NewJob({ user }) {
     return (
         <Wrapper>
             <WrapperChild>
-                <h2>Create Job Application</h2>
+                <Logo>Create Job</Logo>
+                <br></br>
+                <Box>
                 <form onSubmit={handleSubmit}>
                     <FormField>
                         <Label htmlFor="title">Title</Label>
@@ -129,20 +131,17 @@ function NewJob({ user }) {
                         ))}
                     </FormField>
                 </form>
+                </Box>
             </WrapperChild>
             <WrapperChild>
                 <h1>{title}</h1>
                 <h3>{technology}</h3>
-                <h4>{salary} $</h4>
+                <h4>{salary} </h4>
                 <h5>{email}</h5>
-                <h3>
-                    <strong>Work From Home:</strong>{" "}
-                    {workFromHome ? "Yes" : "No"}
-                </h3>
                 <p>
                     <em>{desc}</em>
                 </p>
-                <cite>By {user.username}</cite>
+                
             </WrapperChild>
             
         </Wrapper>
@@ -159,6 +158,19 @@ const Wrapper = styled.section`
 
 const WrapperChild = styled.div`
   flex: 1;
+`;
+
+const Logo = styled.h2`
+  font-family: "Times New Roman", cursive;
+  font-size: 3rem;
+  color: #628141;
+  margin: 0;
+  line-height: 1;
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 export default NewJob; 

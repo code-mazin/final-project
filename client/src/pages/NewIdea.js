@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router";
 import styled from "styled-components";
-import { Button, Error, FormField, Input, Label, Textarea } from "../styles";
+import { Button, Error, FormField, Input, Label, Textarea, Box } from "../styles";
 
 function NewIdea({ user }) {
     const [idea, setIdea] = useState("");
@@ -35,6 +35,7 @@ function NewIdea({ user }) {
     return(
         <Wrapper>
             <WrapperChild>
+                <Box>
                 <h2>New Idea</h2>
                 <form onSubmit={handleSubmit}>
                     <FormField>
@@ -68,6 +69,7 @@ function NewIdea({ user }) {
                         ))}
                     </FormField>
                 </form>
+                </Box>
             </WrapperChild>
             <WrapperChild>
                 <h1>{idea}</h1>

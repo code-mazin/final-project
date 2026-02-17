@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 const Box = styled.div`
-  background-color: #1B211A;
+  background-color: #2b4028;
   color: white;
+  font-family: "Times New Roman", cursive;
   border-radius: 10px;
   padding: 16px;
 

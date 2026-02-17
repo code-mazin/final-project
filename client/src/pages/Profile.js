@@ -1,6 +1,6 @@
 import { useState} from "react";
 import styled from "styled-components";
-import { Box, Button, FormField, Input, Label } from "../styles";
+import { Box, Button, FormField, Input } from "../styles";
 
 function Profile({user, setUser}) {
     const [bio, setBio] = useState("");
@@ -39,11 +39,11 @@ function Profile({user, setUser}) {
             <Logo>Profile:</Logo>
             <br></br>
             <Box>
-                <p>Username: {user.username}</p>
-                <p>Bio: {user.bio}</p>
-                <p>Email: {user.email}</p>
-                <p>age: {user.age} years old.</p>
-                <p>years of experience: {user.years_of_exp} years.</p>
+                <h3>Username: {user.username}</h3>
+                <h3>Bio: {user.bio}</h3>
+                <h3>Email: {user.email}</h3>
+                <h3>age: {user.age} years old.</h3>
+                <h3>years of experience: {user.years_of_exp} years.</h3>
                 <h3>Applied Jobs: </h3>
                 <ul>
                     {user.jobs?.map((job) => (
@@ -59,7 +59,7 @@ function Profile({user, setUser}) {
                 <FormField>
                     <h2>Update Details</h2>
                         <div>
-                            <Label htmlFor="bio">Bio:</Label>
+                            <h3 htmlFor="bio">Bio:</h3>
                         </div>
                     
                         <Input
@@ -72,7 +72,7 @@ function Profile({user, setUser}) {
                 </FormField>
                 <FormField>
                         <div>
-                            <Label htmlFor="email">Email:</Label>
+                            <h3 htmlFor="email">Email:</h3>
                         </div>
                     
                         <Input
@@ -86,7 +86,7 @@ function Profile({user, setUser}) {
                 </FormField>
                 <FormField>
                         <div>
-                            <Label htmlFor="age">Age:</Label>
+                            <h3 htmlFor="age">Age:</h3>
                         </div>
                     
                         <Input
@@ -100,7 +100,7 @@ function Profile({user, setUser}) {
                 </FormField>
                 <FormField>
                         <div>
-                            <Label htmlFor="years_of_exp">Years of experience:</Label>
+                            <h3 htmlFor="years_of_exp">Years of experience:</h3>
                         </div>
                     
                         <Input
@@ -132,9 +132,9 @@ const Wrapper = styled.section`
 `;
 
 const Logo = styled.h2`
-  font-family: "Permanent Marker", cursive;
+  font-family: "Times New Roman", cursive;
   font-size: 3rem;
-  color: black;
+  color: #628141;
   margin: 0;
   line-height: 1;
 

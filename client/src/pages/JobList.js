@@ -20,21 +20,21 @@ function JobList() {
                 jobs.map((job) => (
                     <Job key={job.id}>
                         <Box>  
-                            <em><h2>{job.title}</h2></em>
+                            <h2>{job.title}</h2>
                             <p>
-                                <em><strong>Salary:</strong> {job.salary} $</em>
+                                <strong>Salary:</strong> {job.salary} $
                             </p>
                             <p>
-                                <em><strong>Technology:</strong> {job.technology}</em>
+                                <strong>Technology:</strong> {job.technology}
                             </p>
                             <p>
-                                <em><strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"}</em> 
+                                <strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"} 
                             </p>
                             <p>
-                                <em><strong>Employer Email:</strong> {job.email}</em>
+                                <strong>Employer Email:</strong> {job.email}
                             </p>
                             <p>
-                                <em><strong>Description:</strong> {job.desc}</em>
+                                <strong>Description:</strong> {job.desc}
                             </p>
                             <Divider/>
                             <Button 
@@ -71,9 +71,9 @@ const Divider = styled.hr`
 `;
 
 const Logo = styled.h2`
-  font-family: "Permanent Marker", cursive;
+  font-family: "Times New Roman", cursive;
   font-size: 3rem;
-  color: black;
+  color: #628141;
   margin: 0;
   line-height: 1;
 
