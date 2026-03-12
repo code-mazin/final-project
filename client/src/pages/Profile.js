@@ -8,6 +8,7 @@ function Profile({user, setUser}) {
     const [age, setAge] = useState("");
     const [years_of_exp, setYears_of_exp] = useState("");
     
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -39,7 +40,7 @@ function Profile({user, setUser}) {
             <Logo>Profile:</Logo>
             <br></br>
             <Box>
-                <h3>Username: {user.username}</h3>
+                <h2>Username: {capitalize(user.username)}</h2>
                 <h3>Bio: {user.bio}</h3>
                 <h3>Email: {user.email}</h3>
                 <h3>age: {user.age} years old.</h3>
@@ -117,10 +118,15 @@ function Profile({user, setUser}) {
                             Update
                     </Button>        
                 </FormField>
-                    
-                
+
             </Box>
+
+            
             </form>
+            <br></br>
+            <Box>
+                <h2>Saved jobs:</h2>
+            </Box>
         </Wrapper>
         
     );

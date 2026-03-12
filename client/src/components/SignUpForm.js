@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Error, Input, FormField, Label, Textarea } from "../styles";
+import { Button, Error, Input, FormField, Textarea } from "../styles";
 
 function SignUpForm({ onLogin }) {
     const [username, setUsername] = useState("");
@@ -39,7 +39,7 @@ function SignUpForm({ onLogin }) {
     return (
         <form onSubmit={handleSubmit}>
             <FormField>
-                <Label htmlFor="username">Username</Label>
+                <h2 htmlFor="username">Username</h2>
                 <Input
                     type="text"
                     id="username"
@@ -49,7 +49,7 @@ function SignUpForm({ onLogin }) {
                 />
             </FormField>
             <FormField>
-                <Label htmlFor="email">E-mail</Label>
+                <h2 htmlFor="email">E-mail</h2>
                 <Input
                     type="text"
                     id="email"
@@ -59,7 +59,7 @@ function SignUpForm({ onLogin }) {
                 />
             </FormField>
             <FormField>
-                <Label htmlFor="password">Password</Label>
+                <h2 htmlFor="password">Password</h2>
                 <Input
                     type="password"
                     id="password"
@@ -68,7 +68,7 @@ function SignUpForm({ onLogin }) {
                 />    
             </FormField>
             <FormField>
-                <Label htmlFor="password">Password Confirmation</Label>
+                <h2 htmlFor="password">Password Confirmation</h2>
                 <Input
                     type="password"
                     id="password_confirmation"
@@ -77,7 +77,7 @@ function SignUpForm({ onLogin }) {
                 />
             </FormField>
             <FormField>
-                <Label htmlFor="bio">Bio</Label>
+                <h2 htmlFor="bio">Bio</h2>
                 <Textarea
                     rows="3"
                     id="bio"
