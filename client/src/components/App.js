@@ -4,8 +4,6 @@ import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import JobList from "../pages/JobList";
 import Profile from "../pages/Profile";
-import IdeaList from "../pages/IdeaList";
-import NewIdea from "../pages/NewIdea";
 import NewJob from "../pages/NewJob";
 import JobApp from "../pages/JobApp";
 import { createGlobalStyle } from "styled-components";
@@ -46,14 +44,6 @@ function App() {
 
               <Route exact path="/profile">
                 <Profile user={user} setUser={setUser} />
-              </Route>
-
-              <Route exact path="/ideas">
-                <IdeaList />
-              </Route>
-
-              <Route exact path="/new-idea">
-                <NewIdea user={user} />
               </Route>
 
               {user.admin && (

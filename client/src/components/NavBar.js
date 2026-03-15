@@ -25,13 +25,6 @@ function NavBar({ user, setUser }) {
                 >
                     Profile
                 </Button>
-                <Button
-                    as={NavLink}
-                    to="/ideas"
-                    activeClassname="active"
-                >
-                    Ideas
-                </Button>
                 {user.admin && (
                 <Button
                     as={NavLink}
