@@ -13,8 +13,6 @@ class JobApplicationsController < ApplicationController
     render json: { error: "You have already applied for this job" }, status: :unprocessable_entity
   end
 
-
-
 private
 
   def job_application_params
