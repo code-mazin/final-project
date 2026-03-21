@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_12_30_013707) do
+ActiveRecord::Schema[7.1].define(version: 2026_03_19_144806) do
   create_table "job_applications", force: :cascade do |t|
     t.integer "user_id", null: false
     t.integer "job_id", null: false
@@ -35,6 +35,17 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_30_013707) do
     t.string "desc"
   end
 
+  create_table "saved_jobs", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "job_id", null: false
+    t.text "notes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["job_id"], name: "index_saved_jobs_on_job_id"
+    t.index ["user_id", "job_id"], name: "index_saved_jobs_on_user_id_and_job_id", unique: true
+    t.index ["user_id"], name: "index_saved_jobs_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "password_digest"
@@ -50,4 +61,6 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_30_013707) do
 
   add_foreign_key "job_applications", "jobs"
   add_foreign_key "job_applications", "users"
+  add_foreign_key "saved_jobs", "jobs"
+  add_foreign_key "saved_jobs", "users"
 end
