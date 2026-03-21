@@ -1,5 +1,4 @@
 class SavedJobsController < ApplicationController
-  before_action : :authorize
 
   def create
     bookmark = @current_user.saved_jobs.create!(
