@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
     
-    skip_before_action :authorize, only: :index
+    # skip_before_action :authorize, only: :index
     before_action :authorize_admin, only: :create
 
     def index 

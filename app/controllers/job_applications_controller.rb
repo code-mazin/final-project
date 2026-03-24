@@ -1,5 +1,4 @@
 class JobApplicationsController < ApplicationController
-  before_action :authorize
 
   def create
     application = @current_user.job_applications.create!(
