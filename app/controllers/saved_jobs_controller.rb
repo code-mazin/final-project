@@ -10,6 +10,18 @@ class SavedJobsController < ApplicationController
     render json: { error: "You have already saved this job" }, status: :unprocessable_entity
   end
 
+  def index
+  saved_jobs = @current_user.saved_jobs.includes(:job)
+
+  render json: saved_jobs.map { |sj|
+    {
+      id: sj.id,
+      job_id: sj.job.id,
+      title: sj.job.title,
+    }
+  }
+end
+
 private
 
   def saved_job_params

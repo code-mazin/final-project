@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import styled from "styled-components";
 import { Box, Button, FormField, Input } from "../styles";
 
@@ -7,6 +7,7 @@ function Profile({user, setUser}) {
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
     const [years_of_exp, setYears_of_exp] = useState("");
+    const [savedJobs, setSavedJobs] = useState([])
     
     const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
     function handleSubmit(e) {
@@ -34,6 +35,12 @@ function Profile({user, setUser}) {
             }
         });
     }
+
+    useEffect(() => {
+        fetch("/saved_jobs")
+        .then((r) => r.json())
+        .then(setSavedJobs);
+    }, [])
     
     return (
         <Wrapper>
@@ -43,8 +50,8 @@ function Profile({user, setUser}) {
                 <h2>Username: {capitalize(user.username)}</h2>
                 <h3>Bio: {user.bio}</h3>
                 <h3>Email: {user.email}</h3>
-                <h3>age: {user.age} years old.</h3>
-                <h3>years of experience: {user.years_of_exp} years.</h3>
+                <h3>Age: {user.age} years old.</h3>
+                <h3>Years of experience: {user.years_of_exp} years.</h3>
                 <h3>Applied Jobs: </h3>
                 <ul>
                     {user.jobs?.map((job) => (
@@ -126,6 +133,15 @@ function Profile({user, setUser}) {
             <br></br>
             <Box>
                 <h2>Saved jobs:</h2>
+                {savedJobs.length > 0 ? (
+                    <ul>
+                        {savedJobs.map((job) => (
+                            <li key={job.id}>{job.title}</li>
+                        ))}
+                    </ul>
+                ) : (
+                    <p>No saved jobs yet</p>
+                )}
             </Box>
         </Wrapper>
         

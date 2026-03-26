@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :jobs, only: [:index, :create, :show]
   resources :job_applications, only:[:create]
-  resources :saved_jobs, only:[:create]
+  resources :saved_jobs, only:[:create, :index]
   # resources :enrolls
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

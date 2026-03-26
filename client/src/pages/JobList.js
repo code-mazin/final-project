@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import { Box, Button } from "../styles";
+import { Box, Button} from "../styles";
 import { Link } from "react-router-dom"
 
 function JobList() {
@@ -37,12 +37,20 @@ function JobList() {
                                 <strong>Description:</strong> {job.desc}
                             </p>
                             <Divider/>
-                            <Button 
-                                as={Link}
-                                to={`jobs/${job.id}/apply`}
-                            >
-                                Apply
-                            </Button>
+                    
+                           <ButtonGroup>
+                                <Button 
+                                    as={Link}
+                                    to={`jobs/${job.id}/apply`}
+                                >
+                                    Apply
+                                </Button>
+
+                                <Button>
+                                    Save
+                                </Button>
+                            </ButtonGroup>
+                    
                         </Box>
                     </Job>
                 ))
@@ -82,5 +90,10 @@ const Logo = styled.h2`
     text-decoration: none;
   }
 `;
+
+const ButtonGroup = styled.div`
+    display: flex;
+    gap: 10px;
+`
 
 export default JobList;
