@@ -18,6 +18,7 @@ class SavedJobsController < ApplicationController
       id: sj.id,
       job_id: sj.job.id,
       title: sj.job.title,
+      technology: sj.job.technology
     }
   }
 end

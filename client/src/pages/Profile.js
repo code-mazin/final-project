@@ -136,7 +136,9 @@ function Profile({user, setUser}) {
                 {savedJobs.length > 0 ? (
                     <ul>
                         {savedJobs.map((job) => (
-                            <li key={job.id}>{job.title}</li>
+                            <li key={job.id}>
+                                {job.title} - {job.technology}
+                            </li>
                         ))}
                     </ul>
                 ) : (
