@@ -1,15 +1,19 @@
-import { useEffect, useState} from "react";
+import { useState} from "react";
 import styled from "styled-components";
 import { Box, Button, FormField, Input } from "../styles";
+import { Link } from "react-router-dom"
 
-function Profile({user, setUser}) {
+function Profile({user, setUser, savedJobs, setSavedJobs}) {
+
+    console.log("PROFILE savedJobs:", savedJobs);
+    
     const [bio, setBio] = useState("");
     const [email, setEmail] = useState("");
     const [age, setAge] = useState("");
     const [years_of_exp, setYears_of_exp] = useState("");
-    const [savedJobs, setSavedJobs] = useState([])
     
     const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
+
     function handleSubmit(e) {
         e.preventDefault();
 
@@ -36,12 +40,18 @@ function Profile({user, setUser}) {
         });
     }
 
-    useEffect(() => {
-        fetch("/saved_jobs")
-        .then((r) => r.json())
-        .then(setSavedJobs);
-    }, [])
-    
+    function handleUnsave(savedJobId){
+        fetch(`/saved_jobs/${savedJobId}`, {
+            method: "DELETE",
+        }).then((r) => {
+            if (r.ok) {
+                setSavedJobs((prev) =>
+                    prev.filter((job) => job.id !== savedJobId)
+                );
+            }
+        });
+    }
+
     return (
         <Wrapper>
             <Logo>Profile:</Logo>
@@ -138,6 +148,24 @@ function Profile({user, setUser}) {
                         {savedJobs.map((job) => (
                             <li key={job.id}>
                                 {job.title} - {job.technology}
+                                <Link 
+                                    to={`/jobs/${job.job_id}/apply`}
+                                    style={{ marginLeft: "10px", color: "#628141"}}
+                                >
+                                    More...
+                                </Link>
+                                <button
+                                    onClick={() => handleUnsave(job.id)}
+                                    style={{
+                                        marginLeft: "10px",
+                                        border: "none",
+                                        background: "transparent",
+                                        cursor: "pointer",
+                                        fontSize: "16px"
+                                    }}
+                                >
+                                    ❌
+                                </button>
                             </li>
                         ))}
                     </ul>

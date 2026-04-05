@@ -1,11 +1,14 @@
 class SavedJobsController < ApplicationController
 
   def create
-    bookmark = @current_user.saved_jobs.create!(
-      saved_job_params
-    )
+    bookmark = @current_user.saved_jobs.create!(saved_job_params)
 
-    render json: bookmark, status: :created
+    render json: {
+      id: bookmark.id,
+      job_id: bookmark.job.id,
+      title: bookmark.job.title,
+      technology: bookmark.job.technology
+    }, status: :created
       rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
     render json: { error: "You have already saved this job" }, status: :unprocessable_entity
   end
@@ -21,12 +24,20 @@ class SavedJobsController < ApplicationController
       technology: sj.job.technology
     }
   }
-end
-
-private
-
-  def saved_job_params
-    params.permit(:job_id, :notes)
   end
+
+  def destroy
+    saved_job = @current_user.saved_jobs.find(params[:id])
+    saved_job.destroy
+
+    head :no_content
+  end
+
+
+  private
+
+    def saved_job_params
+      params.permit(:job_id)
+    end
 
 end

@@ -18,6 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
 function App() {
   const [user, setUser] = useState(null);
+  const [savedJobs, setSavedJobs] = useState([]);
 
   useEffect(() => {
     fetch("/me").then((r) => {
@@ -25,6 +26,12 @@ function App() {
         r.json().then((user) => setUser(user));
       }
     });
+  }, []);
+
+  useEffect(() => {
+    fetch("/saved_jobs")
+      .then((r) => r.json())
+      .then(setSavedJobs);
   }, []);
 
   return (
@@ -39,11 +46,16 @@ function App() {
           <main>
             <Switch>
               <Route exact path="/">
-                <JobList user={user} setUser={setUser} />
+                <JobList user={user} setUser={setUser} savedJobs={savedJobs} setSavedJobs={setSavedJobs} />
               </Route>
 
               <Route exact path="/profile">
-                <Profile user={user} setUser={setUser} />
+                <Profile
+                  user={user} 
+                  setUser={setUser} 
+                  savedJobs={savedJobs}
+                  setSavedJobs={setSavedJobs}
+                />
               </Route>
 
               {user.admin && (

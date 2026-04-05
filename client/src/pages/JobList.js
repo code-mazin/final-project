@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Box, Button} from "../styles";
 import { Link } from "react-router-dom"
 
-function JobList() {
+function JobList({ savedJobs, setSavedJobs}) {
     const [jobs, setJobs] = useState([]);
     
     useEffect(() => {
@@ -12,12 +12,30 @@ function JobList() {
         .then(setJobs);
     }, []);
 
+    function handleSave(jobId) {
+        fetch("/saved_jobs", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ job_id: jobId }),
+        })
+            .then((r) => r.json())
+            .then((newSavedJob) => {
+                console.log("NEW:", newSavedJob);
+                setSavedJobs((prev) => [...prev, newSavedJob]);
+            });
+    }
+
     return (
         <Wrapper>
             <Logo>Jobs:</Logo>
             <br></br>
             {jobs.length > 0 ? (
-                jobs.map((job) => (
+                jobs.map((job) => {
+                    const isSaved = savedJobs.some((j) => j.job_id === job.id);
+
+                    return(
                     <Job key={job.id}>
                         <Box>  
                             <h2>{job.title}</h2>
@@ -46,14 +64,14 @@ function JobList() {
                                     Apply
                                 </Button>
 
-                                <Button>
-                                    Save
+                                <Button onClick={() => handleSave(job.id)} disabled={isSaved}>
+                                    {isSaved ? "Saved ✅" : "Save"}
                                 </Button>
                             </ButtonGroup>
                     
                         </Box>
                     </Job>
-                ))
+                )})
             ) : (
                 <>
                 <h2>No Jobs Found</h2>
