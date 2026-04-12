@@ -1,4 +1,5 @@
 import { useParams } from "react-router-dom";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { Box, Button } from "../styles";
@@ -9,6 +10,8 @@ function JobApp({ setUser}) {
     const [job, setJob] = useState(null);
     const [coverLetter, setCoverLetter] = useState("");
     const history = useHistory();
+
+    useDocumentTitle("Den of Devs | Job")
 
     // Load job details
     useEffect(() => {
@@ -55,7 +58,7 @@ function JobApp({ setUser}) {
                 <p><strong>Salary</strong> {job.salary} $</p>
                 <p><strong>Technology:</strong> {job.technology}</p>
                 <p>
-                    <em><strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"}</em> 
+                    <strong>Work from home:</strong>{job.work_from_home ? "✅ Available" : "❌ Not Available"}
                 </p>
                 <p><strong>Email:</strong> {job.email}</p>
                 <p><strong>Description:</strong> {job.desc}</p>

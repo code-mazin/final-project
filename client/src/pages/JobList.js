@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import styled from "styled-components";
 import { Box, Button} from "../styles";
 import { Link } from "react-router-dom"
 
 function JobList({ savedJobs, setSavedJobs}) {
     const [jobs, setJobs] = useState([]);
+
+    useDocumentTitle("Den of Devs")
     
     useEffect(() => {
         fetch("/jobs")

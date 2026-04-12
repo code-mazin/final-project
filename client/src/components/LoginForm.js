@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { Button, Error, Input, FormField } from "../styles";
 
 function LoginForm({ onLogin }) {
@@ -6,6 +7,8 @@ function LoginForm({ onLogin }) {
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
+
+    useDocumentTitle("Den of Devs | Login")
 
     function handleSubmit(e) {
         e.preventDefault();

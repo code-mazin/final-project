@@ -1,11 +1,12 @@
 import { useState} from "react";
+import useDocumentTitle from  "../hooks/useDocumentTitle";
 import styled from "styled-components";
 import { Box, Button, FormField, Input } from "../styles";
 import { Link } from "react-router-dom"
 
 function Profile({user, setUser, savedJobs, setSavedJobs}) {
 
-    console.log("PROFILE savedJobs:", savedJobs);
+    useDocumentTitle("Den of Devs | Profile")
     
     const [bio, setBio] = useState("");
     const [email, setEmail] = useState("");

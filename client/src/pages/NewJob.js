@@ -1,5 +1,6 @@
 // This component is not rendered.
 import { useState } from "react";
+import useDocumentTitle from "../hooks/useDocumentTitle"
 import { useHistory } from "react-router-dom";
 import styled from "styled-components";
 import { Button, Error, FormField, Input, Label, Textarea, Box } from "../styles";
@@ -15,6 +16,8 @@ function NewJob({ user }) {
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
+
+    useDocumentTitle("Den of Devs | New Job")
 
     function handleSubmit(e) {
         e.preventDefault();
