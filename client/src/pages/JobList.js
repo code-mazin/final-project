@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import useDocumentTitle from "../hooks/useDocumentTitle"
 import styled from "styled-components";
-import { Box, Button} from "../styles";
+import { Box, Button, Input} from "../styles";
 import { Link } from "react-router-dom"
 
 function JobList({ savedJobs, setSavedJobs}) {
     const [jobs, setJobs] = useState([]);
+    const [searchTerm, setSearchTerm] = useState("");
 
     useDocumentTitle("Den of Devs")
     
@@ -30,12 +31,25 @@ function JobList({ savedJobs, setSavedJobs}) {
             });
     }
 
+    const filteredJobs = jobs.filter((job) =>
+        job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        job.technology.toLowerCase().includes(searchTerm.toLowerCase())
+    );
     return (
         <Wrapper>
             <Logo>Jobs:</Logo>
             <br></br>
-            {jobs.length > 0 ? (
-                jobs.map((job) => {
+            <Box>
+                <h2>Search</h2>
+                    <Input type="text"
+                    placeholder="Search jobs..."
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    />                        
+            </Box>
+            <br></br>
+            {filteredJobs.length > 0 ? (
+                filteredJobs.map((job) => {
                     const isSaved = savedJobs.some((j) => j.job_id === job.id);
 
                     return(
@@ -77,7 +91,7 @@ function JobList({ savedJobs, setSavedJobs}) {
                 )})
             ) : (
                 <>
-                <h2>No Jobs Found</h2>
+                <h2>No Matching Jobs Found</h2>
             </>
             )}
         </Wrapper>
