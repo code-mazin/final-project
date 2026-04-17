@@ -94,6 +94,9 @@ function JobList({ savedJobs, setSavedJobs}) {
                 <h2>No Matching Jobs Found</h2>
             </>
             )}
+            <Footer>
+                To post jobs email: <strong>denofdevs.jobs@gmail.com</strong>
+            </Footer>
         </Wrapper>
     );
 }
@@ -129,6 +132,15 @@ const Logo = styled.h2`
 const ButtonGroup = styled.div`
     display: flex;
     gap: 10px;
+`
+
+const Footer = styled.footer`
+    margin-top: 40px;
+    padding: 20px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #555;
+    border-top: 1px solid #ccc;
 `
 
 export default JobList;
