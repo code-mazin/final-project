@@ -42,7 +42,7 @@ function App() {
         <Login onLogin={setUser} />
       ) : (
         <>
-          <NavBar user={user} setUser={setUser} />
+          <NavBar user={user} setUser={setUser} setSavedJobs={setSavedJobs} />
           <main>
             <Switch>
               <Route exact path="/">

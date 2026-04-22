@@ -55,6 +55,12 @@ Built with React (frontend) and a Rails API (backend).
 
 ---
 
+## 🎥 Demo
+
+[Watch Demo Video](https://youtu.be/hp42tr07ud8)
+
+---
+
 ## ⚙️ Installation
 
 Clone the repository:
@@ -112,7 +118,8 @@ npm start
 - Advanced filtering (salary, remote, tech stack)
 - Pagination for job listings
 - Improve UI/UX design
-- Notifications dashboard for applications
+- Notifications: Notify users of new job postings that match their search
+- Notify employers of new applications.
 
 ---
 

@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useEffect, useState} from "react";
 import useDocumentTitle from  "../hooks/useDocumentTitle";
 import styled from "styled-components";
 import { Box, Button, FormField, Input } from "../styles";
@@ -40,6 +40,14 @@ function Profile({user, setUser, savedJobs, setSavedJobs}) {
             }
         });
     }
+
+    useEffect(() => {
+        if (user) {
+            fetch("/saved_jobs")
+                .then((r) => r.json())
+                .then(setSavedJobs);
+        }
+    }, [user]);
 
     function handleUnsave(savedJobId){
         fetch(`/saved_jobs/${savedJobId}`, {

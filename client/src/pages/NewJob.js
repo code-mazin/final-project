@@ -139,7 +139,7 @@ function NewJob({ user }) {
             <WrapperChild>
                 <h1>{title}</h1>
                 <h3>{technology}</h3>
-                <h4>{salary} </h4>
+                <h4>{salary} $ </h4>
                 <h5>{email}</h5>
                 <p>
                     <em>{desc}</em>
