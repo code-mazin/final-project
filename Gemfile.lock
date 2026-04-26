@@ -127,7 +127,6 @@ GEM
       net-smtp
     marcel (1.1.0)
     mini_mime (1.1.5)
-    mini_portile2 (2.8.9)
     minitest (5.25.5)
     mutex_m (0.3.0)
     net-imap (0.4.22)
@@ -199,8 +198,9 @@ GEM
     reline (0.6.2)
       io-console (~> 0.5)
     securerandom (0.3.2)
-    sqlite3 (1.7.3)
-      mini_portile2 (~> 2.8.0)
+    sqlite3 (1.7.3-aarch64-linux)
+    sqlite3 (1.7.3-arm64-darwin)
+    sqlite3 (1.7.3-x86_64-linux)
     stringio (3.1.7)
     thor (1.4.0)
     timeout (0.4.3)
@@ -229,7 +229,7 @@ DEPENDENCIES
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.7.4p191
+   ruby 3.1.4p223
 
 BUNDLED WITH
    2.4.19
