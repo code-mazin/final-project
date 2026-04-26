@@ -2,6 +2,7 @@ class JobsController < ApplicationController
     
     # skip_before_action :authorize, only: :index
     before_action :authorize_admin, only: :create
+    skip_before_action :authorize, only: [:index, :show]
 
     def index 
         render json: Job.all
