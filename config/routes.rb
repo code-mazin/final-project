@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   patch "/me", to: "users#update"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+
+  root "jobs#index"
 end
 
 
