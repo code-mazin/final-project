@@ -54,6 +54,30 @@ Built with React (frontend) and a Rails API (backend).
 ![Apply](./screenshots/JobApplication.png)
 
 ---
+## 🌐 Live Demo
+
+Check out the live version of the app:
+
+👉 https://denofdevs-4a1345b4b6e4.herokuapp.com
+
+Demo Credentials (optional)
+
+If you want to test quickly:
+
+Email: demo@example.com
+Password: password123
+
+(Or sign up as a new user)
+
+⚠️ Notes
+The app may take a few seconds to load initially (Heroku free tier sleeps)
+Some features require authentication (login/signup)
+Backend is powered by Rails API and frontend by React
+
+- 🌐 Live deployed app on Heroku
+- 📧 Email notifications using ActionMailer + Gmail SMTP
+
+- Some features are still being refined as part of ongoing development
 
 ## 🎥 Demo
 
