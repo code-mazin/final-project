@@ -139,6 +139,7 @@ npm start
 
 ## 🚀 Future Improvements
 
+- Change frontEnd, show jobs list as home then add login button
 - Advanced filtering (salary, remote, tech stack)
 - Pagination for job listings
 - Improve UI/UX design
