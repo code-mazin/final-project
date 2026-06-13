@@ -1,4 +1,5 @@
 import React from "react";
+import { toast } from "react-toastify";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
@@ -9,6 +10,8 @@ function NavBar({ user, setUser, setSavedJobs }) {
             if (r.ok) {
                 setSavedJobs([]);
                 setUser(null);
+
+                toast.success("Logged out successfully!");
             }
         });
     }
@@ -19,14 +22,25 @@ function NavBar({ user, setUser, setSavedJobs }) {
                 <Link to="/">Den of Devs</Link>
             </Logo>
             <Nav>
-                <Button
-                    as={NavLink}
-                    to="/profile"
-                    activeClassname="active"
-                >
-                    Profile
-                </Button>
-                {user.admin && (
+                {!user && (
+                    <Button
+                        as={NavLink}
+                        to="/login"
+                        activeClassname="active"
+                    >
+                        Login
+                    </Button>
+                )}
+                { user && (
+                    <Button
+                        as={NavLink}
+                        to="/profile"
+                        activeClassname="active"
+                     >
+                        Profile
+                    </Button>
+                )}
+                {user?.admin && (
                 <Button
                     as={NavLink}
                     to="/new-job"
@@ -35,9 +49,13 @@ function NavBar({ user, setUser, setSavedJobs }) {
                     New Job
                 </Button>
                 )}
-                <Button onClick={handleLogoutClick}>
+
+                {user && (
+                    <Button onClick={handleLogoutClick}>
                     Logout
                 </Button>
+                )}
+                
                 
                 
                 
@@ -54,18 +72,18 @@ const Wrapper = styled.header`
   padding: 8px;
 `;
 
-const Logo = styled.h1`
-  font-family: "Times New Roman", cursive;
-  font-size: 3rem;
-  color: #628141;
-  margin: 0;
-  line-height: 1;
+// const Logo = styled.h1`
+//   font-family: "Times New Roman", cursive;
+//   font-size: 3rem;
+//   color: #628141;
+//   margin: 0;
+//   line-height: 1;
 
-  a {
-    color: inherit;
-    text-decoration: none;
-  }
-`;
+//   a {
+//     color: inherit;
+//     text-decoration: none;
+//   }
+// `;
 
 const Nav = styled.nav`
   display: flex;
@@ -75,8 +93,24 @@ const Nav = styled.nav`
 
   .active {
     background-color: #8BAE66;
-    color: white:
+    color: white;
     border: 2px solid #1B211A;
+  }
+`;
+
+const Logo = styled.h1`
+  font-family: "Permanent Marker", cursive;
+  font-size: 3rem;
+  color: #628141;
+  margin: 0;
+  line-height: 1;
+
+  a,
+  a:visited,
+  a:hover,
+  a:active {
+    color: #628141;
+    text-decoration: none;
   }
 `;
 

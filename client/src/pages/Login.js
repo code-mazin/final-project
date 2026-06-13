@@ -9,7 +9,7 @@ function Login({ onLogin }) {
 
     return (
         <Wrapper>
-            <Logo>Den of Devs </Logo>
+            {/* <Logo>Den of Devs </Logo> */}
             {showLogin ? (
                 <>
                     <LoginForm onLogin={onLogin} />
@@ -38,12 +38,12 @@ function Login({ onLogin }) {
 }
 
 
-const Logo = styled.h1`
-  font-family: "Permanent Marker", cursive;
-  font-size: 3rem;
-  color: #628141;
-  margin: 8px 0 16px;
-`;
+// const Logo = styled.h1`
+//   font-family: "Permanent Marker", cursive;
+//   font-size: 3rem;
+//   color: #628141;
+//   margin: 8px 0 16px;
+// `;
 
 const Wrapper = styled.section`
   max-width: 500px;

@@ -47,7 +47,15 @@ function Profile({user, setUser, savedJobs, setSavedJobs}) {
                 .then((r) => r.json())
                 .then(setSavedJobs);
         }
-    }, [user]);
+    }, [user, setSavedJobs]);
+
+    if (!user) {
+        return (
+            <Wrapper>
+                <h2>Please log in.</h2>
+            </Wrapper>
+        );
+    }
 
     function handleUnsave(savedJobId){
         fetch(`/saved_jobs/${savedJobId}`, {

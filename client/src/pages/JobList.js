@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import useDocumentTitle from "../hooks/useDocumentTitle"
 import styled from "styled-components";
 import { Box, Button, Input} from "../styles";
 import { Link } from "react-router-dom"
 
-function JobList({ savedJobs, setSavedJobs}) {
+function JobList({ user, savedJobs, setSavedJobs}) {
     const [jobs, setJobs] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const history = useHistory()
 
     useDocumentTitle("Den of Devs")
     
@@ -17,6 +19,11 @@ function JobList({ savedJobs, setSavedJobs}) {
     }, []);
 
     function handleSave(jobId) {
+        if (!user) {
+            alert("Please log in to save jobs.");
+            history.push("/login")
+            return;
+        }
         fetch("/saved_jobs", {
             method: "POST",
             headers: {
@@ -26,7 +33,6 @@ function JobList({ savedJobs, setSavedJobs}) {
         })
             .then((r) => r.json())
             .then((newSavedJob) => {
-                console.log("NEW:", newSavedJob);
                 setSavedJobs((prev) => [...prev, newSavedJob]);
             });
     }
@@ -50,7 +56,10 @@ function JobList({ savedJobs, setSavedJobs}) {
             <br></br>
             {filteredJobs.length > 0 ? (
                 filteredJobs.map((job) => {
-                    const isSaved = savedJobs.some((j) => j.job_id === job.id);
+                    // const isSaved = savedJobs.some((j) => j.job_id === job.id);
+                    const isSaved = Array.isArray(savedJobs)
+                    ? savedJobs.some((j) => j.job_id === job.id)
+                    : false;
 
                     return(
                     <Job key={job.id}>
@@ -76,7 +85,15 @@ function JobList({ savedJobs, setSavedJobs}) {
                            <ButtonGroup>
                                 <Button 
                                     as={Link}
-                                    to={`jobs/${job.id}/apply`}
+                                    to={user? `jobs/${job.id}/apply` : "#"}
+                                    onClick={(e) => {
+                                        if (!user) {
+                                            e.preventDefault();
+                                            alert("Please log in before applying for jobs.")
+                                            history.push("/login");
+                                            return;
+                                        }
+                                    }}
                                 >
                                     Apply
                                 </Button>

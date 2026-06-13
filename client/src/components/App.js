@@ -1,12 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 import NavBar from "./NavBar";
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import JobList from "../pages/JobList";
 import Profile from "../pages/Profile";
 import NewJob from "../pages/NewJob";
 import JobApp from "../pages/JobApp";
 import { createGlobalStyle } from "styled-components";
+import Login from "../pages/Login";
 
 const GlobalStyle = createGlobalStyle`
       body {
@@ -29,18 +30,19 @@ function App() {
   }, []);
 
   useEffect(() => {
+    if (!user) {
+      setSavedJobs([]);
+      return;
+    }
+
     fetch("/saved_jobs")
       .then((r) => r.json())
       .then(setSavedJobs);
-  }, []);
+  }, [user])
 
   return (
     <>
       <GlobalStyle />
-
-      {!user ? (
-        <Login onLogin={setUser} />
-      ) : (
         <>
           <NavBar user={user} setUser={setUser} setSavedJobs={setSavedJobs} />
           <main>
@@ -58,7 +60,7 @@ function App() {
                 />
               </Route>
 
-              {user.admin && (
+              {user?.admin && (
                 <Route exact path="/new-job">
                   <NewJob user={user} />
                 </Route>
@@ -67,10 +69,13 @@ function App() {
               <Route exact path="/jobs/:id/apply">
                 <JobApp setUser={setUser} />
               </Route>
+              <Route exact="/login">
+                <Login onLogin={setUser}/>
+              </Route>
             </Switch>
           </main>
         </>
-      )}
+      
     </>
   );
 }
