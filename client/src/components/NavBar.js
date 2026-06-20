@@ -1,5 +1,4 @@
 import React from "react";
-import { toast } from "react-toastify";
 import { Link, NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "../styles";
@@ -11,7 +10,7 @@ function NavBar({ user, setUser, setSavedJobs }) {
                 setSavedJobs([]);
                 setUser(null);
 
-                toast.success("Logged out successfully!");
+                alert("Logged out successfully!");
             }
         });
     }

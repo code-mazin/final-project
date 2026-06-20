@@ -43,6 +43,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
+      {/* <ToastContainer /> */}
         <>
           <NavBar user={user} setUser={setUser} setSavedJobs={setSavedJobs} />
           <main>
