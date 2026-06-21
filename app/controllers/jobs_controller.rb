@@ -1,6 +1,6 @@
 class JobsController < ApplicationController
     
-    # skip_before_action :authorize, only: :index
+    skip_before_action :authorize, only: :index
     # before_action :authorize_admin, only: :create
     # skip_before_action :authorize, only: [:index, :show]
 
@@ -13,10 +13,10 @@ class JobsController < ApplicationController
         render json: job, status: :created
     end
 
-    def show
-        job = Job.find(params[:id])
-        render json: job
-    end
+    # def show
+    #     job = Job.find(params[:id])
+    #     render json: job
+    # end
 
 
     private
