@@ -30,15 +30,23 @@ function NavBar({ user, setUser, setSavedJobs }) {
                         Login
                     </Button>
                 )}
+
                 { user && (
-                    <Button
-                        as={NavLink}
-                        to="/profile"
-                        activeClassname="active"
-                     >
-                        Profile
-                    </Button>
+                <Button
+                    as={NavLink}
+                    to="/profile"
+                    activeClassname="active"
+                >
+                    Profile
+                </Button>
                 )}
+
+                {user && (
+                <Button onClick={handleLogoutClick}>
+                    Logout
+                </Button>
+                )}
+
                 {user?.admin && (
                 <Button
                     as={NavLink}
@@ -48,15 +56,6 @@ function NavBar({ user, setUser, setSavedJobs }) {
                     New Job
                 </Button>
                 )}
-
-                {user && (
-                    <Button onClick={handleLogoutClick}>
-                    Logout
-                </Button>
-                )}
-                
-                
-                
                 
             </Nav>
         </Wrapper>

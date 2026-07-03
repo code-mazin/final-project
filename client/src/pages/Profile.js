@@ -1,4 +1,5 @@
 import { useEffect, useState} from "react";
+import { Redirect } from "react-router-dom";
 import useDocumentTitle from  "../hooks/useDocumentTitle";
 import styled from "styled-components";
 import { Box, Button, FormField, Input } from "../styles";
@@ -50,11 +51,7 @@ function Profile({user, setUser, savedJobs, setSavedJobs}) {
     }, [user, setSavedJobs]);
 
     if (!user) {
-        return (
-            <Wrapper>
-                <h2>Please log in.</h2>
-            </Wrapper>
-        );
+        return <Redirect to="/" />;
     }
 
     function handleUnsave(savedJobId){

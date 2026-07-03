@@ -8,8 +8,10 @@ class JobApplicationsController < ApplicationController
     JobApplicationMailer.confirmation_email(application).deliver_later
 
     render json: application, status: :created
-      rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
-    render json: { error: "You have already applied for this job" }, status: :unprocessable_entity
+  rescue ActiveRecord::RecordNotUnique, ActiveRecord::RecordInvalid
+    render json: {
+      error: "You have already applied for this job" 
+      }, status: :unprocessable_entity
   end
 
 private
