@@ -1,5 +1,4 @@
 # Den of Devs Job Board  
-### Bootcamp Final Project
 
 A full-stack job board application where users can browse jobs, save listings, and apply directly.  
 Built with React (frontend) and a Rails API (backend).
@@ -60,14 +59,6 @@ Check out the live version of the app:
 
 👉 https://denofdevs-4a1345b4b6e4.herokuapp.com
 
-Demo Credentials (optional)
-
-If you want to test quickly:
-
-Email: demo@example.com
-Password: password123
-
-(Or sign up as a new user)
 
 ⚠️ Notes
 The app may take a few seconds to load initially (Heroku free tier sleeps)
@@ -102,7 +93,7 @@ rails s
 
 cd final-project  
 npm install  
-npm start  
+npm start --prefix client
 
 ---
 
@@ -136,6 +127,11 @@ npm start
 - Click **Apply** to submit an application  
 
 ---
+
+## 🚀 Challenges
+
+- SQLite not working on Heroku 
+    worked aroung the issue by switching to PostgreSQL for Heroku and keeping SQLite for local development
 
 ## 🚀 Future Improvements
 

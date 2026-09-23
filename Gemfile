@@ -13,8 +13,11 @@ gem 'active_model_serializers'
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
 
-# Use sqlite3 as the database for Active Record
+# Use sqlite3 for local development
 gem "sqlite3", "~> 1.4"
+
+# Use PostgreSQL for production
+gem "pg", "~> 1.5"
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
