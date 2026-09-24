@@ -130,8 +130,19 @@ npm start --prefix client
 
 ## 🚀 Challenges
 
-- SQLite not working on Heroku 
-    worked aroung the issue by switching to PostgreSQL for Heroku and keeping SQLite for local development
+* SQLite not working on Heroku 
+    worked around the issue by switching to PostgreSQL for Heroku and keeping SQLite for local development
+    - Added the pg gem to Rails project
+    - Configured PostgreSQL for production
+    - Created a Heroku PostgreSQL database
+    - Ran all your migrations successfully
+    - seeded jobs
+
+---
+
+## Lessons from this project
+
+* I was using SQLite for development and learnt that its not ideal for production as it cant hold data for long
 
 ## 🚀 Future Improvements
 
