@@ -14,10 +14,27 @@ function JobApp({ setUser}) {
     useDocumentTitle("Den of Devs | Job")
 
     // Load job details
+    // useEffect(() => {
+    //     fetch(`/jobs/${id}`)
+    //         .then((r) => r.json())
+    //         .then(setJob);
+    // }, [id]);
+
     useEffect(() => {
-        fetch(`/jobs/${id}`)
-            .then((r) => r.json())
-            .then(setJob);
+    console.log("Job ID:", id);
+
+    fetch(`/jobs/${id}`)
+        .then((r) => {
+            console.log("Response status:", r.status);
+            return r.json();
+        })
+        .then((data) => {
+            console.log("Job data:", data);
+            setJob(data);
+        })
+        .catch((error) => {
+            console.error("Fetch error:", error);
+        });
     }, [id]);
 
     function handleSubmit(e) {
