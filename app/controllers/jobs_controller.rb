@@ -13,16 +13,23 @@ class JobsController < ApplicationController
         render json: job, status: :created
     end
 
-    # def show
-    #     job = Job.find(params[:id])
-    #     render json: job
-    # end
+    def show
+        job = Job.find(params[:id])
+        render json: job
+    end
 
 
     private
 
     def job_params
-        params.permit(:title, :salary, :technology, :desc, :email, :work_from_home)
+        params.permit(
+            :title,
+            :salary,
+            :technology,
+            :desc,
+            :email,
+            :work_from_home
+        )
     end
 
 end
