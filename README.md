@@ -146,6 +146,7 @@ npm start --prefix client
 
 ## 🚀 Future Improvements
 
+- Employer user dashboard
 - Advanced filtering (salary, remote, tech stack)
 - Pagination for job listings
 - Improve UI/UX design
