@@ -61,14 +61,6 @@ function JobList({ user, savedJobs, setSavedJobs}) {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     />                        
-                    {/* <select
-                        value={jobType}
-                        onChange={(e) => setJobType(e.target.value)}
-                    >
-                        <option value="all">All Jobs</option>
-                        <option value="full-time">Full-time</option>
-                        <option value="part-time">Part-time</option>
-                    </select> */}
             </Box>
             <br></br>
             <Box>
