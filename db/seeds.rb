@@ -11,37 +11,37 @@ Job.delete_all
 puts "🏕 Seeding jobs..."
 
 job1 = Job.create(title: "BackEnd Developer", salary: "100,000", technology: "Ruby on Rails", email: "AcademyXi@x.com", 
-work_from_home: true, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: true, published: true, job_type: "full-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level Ruby Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job2 = Job.create(title: "FrontEnd Developer", salary: "90,000", technology: "React", email: "AcademyXi@x.com",
-work_from_home: true, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: true, published: true, job_type: "full-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level React Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job3 = Job.create(title: "NodeJs Developer", salary: "95,000", technology: "NodeJs", email: "AcademyXi@x.com",
-work_from_home: true, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: true, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level NodeJs Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job4 = Job.create(title: "JavaScript Developer", salary: "100,000", technology: "JavaScript", email: "AcademyXi@x.com",
-work_from_home: true, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: true, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level JavaScript Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job5 = Job.create(title: "Ruby on Rails Developer", salary: "120,000", technology: "Ruby on Rails", email: "AcademyXi@x.com",
-work_from_home: false, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: false, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level Ruby Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job7 = Job.create(title: "React Developer", salary: "110,000", technology: "React", email: "AcademyXi@x.com",
-work_from_home: false, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: false, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level React Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
 job8 = Job.create(title: "BackEnd Developer", salary: "100,000", technology: "NodeJs", email: "AcademyXi@x.com",
-work_from_home: false, published: true, desc: "Our client is a software business based in Sydney and through continued growth have 
+work_from_home: false, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level NodeJs Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 

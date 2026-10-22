@@ -8,7 +8,9 @@ import { Link } from "react-router-dom"
 function JobList({ user, savedJobs, setSavedJobs}) {
     const [jobs, setJobs] = useState([]);
     const [searchTerm, setSearchTerm] = useState("");
+    const [jobType, setJobType] = useState("all")
     const history = useHistory()
+    
 
     useDocumentTitle("Den of Devs")
     
@@ -37,10 +39,17 @@ function JobList({ user, savedJobs, setSavedJobs}) {
             });
     }
 
-    const filteredJobs = jobs.filter((job) =>
-        job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-        job.technology.toLowerCase().includes(searchTerm.toLowerCase())
-    );
+    const filteredJobs = jobs.filter((job) => {
+        const matchesSearch = 
+            job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            job.technology.toLowerCase().includes(searchTerm.toLowerCase())
+
+        const matchesJobType = 
+            jobType === "all" || job.job_type === jobType;
+
+        return matchesSearch && matchesJobType;
+    });
+
     return (
         <Wrapper>
             <Logo>Jobs:</Logo>
@@ -52,6 +61,42 @@ function JobList({ user, savedJobs, setSavedJobs}) {
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                     />                        
+                    {/* <select
+                        value={jobType}
+                        onChange={(e) => setJobType(e.target.value)}
+                    >
+                        <option value="all">All Jobs</option>
+                        <option value="full-time">Full-time</option>
+                        <option value="part-time">Part-time</option>
+                    </select> */}
+            </Box>
+            <br></br>
+            <Box>
+                <h3>FILTER BY JOB TYPE</h3>
+
+                <FilterButton
+                    active={jobType === "all"}
+                    type="button"
+                    onClick={() => setJobType("all")}
+                >
+                    All
+                </FilterButton>
+
+                <FilterButton
+                    active={jobType === "full-time"}
+                    type="button"
+                    onClick={() => setJobType("full-time")}
+                >
+                    Full-time
+                </FilterButton>
+
+                <FilterButton
+                    active={jobType === "part-time"}
+                    type="button"
+                    onClick={() => setJobType("part-time")}
+                >
+                    Part-time
+                </FilterButton>
             </Box>
             <br></br>
             {filteredJobs.length > 0 ? (
@@ -76,6 +121,9 @@ function JobList({ user, savedJobs, setSavedJobs}) {
                             </p>
                             <p>
                                 <strong>Employer Email:</strong> {job.email}
+                            </p>
+                            <p>
+                                <strong>Job type:</strong> {job.job_type.charAt(0).toUpperCase() + job.job_type.slice(1)}
                             </p>
                             <p>
                                 <strong>Description:</strong> {job.desc}
@@ -159,5 +207,17 @@ const Footer = styled.footer`
     color: #555;
     border-top: 1px solid #ccc;
 `
+const FilterButton = styled.button`
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+
+    background: ${(props) => props.active ? "#628141" : "#eee"};
+    color: ${(props) => props.active ? "white" : "#333"};
+`;
 
 export default JobList;
