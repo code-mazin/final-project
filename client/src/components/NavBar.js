@@ -70,18 +70,6 @@ const Wrapper = styled.header`
   padding: 8px;
 `;
 
-// const Logo = styled.h1`
-//   font-family: "Times New Roman", cursive;
-//   font-size: 3rem;
-//   color: #628141;
-//   margin: 0;
-//   line-height: 1;
-
-//   a {
-//     color: inherit;
-//     text-decoration: none;
-//   }
-// `;
 
 const Nav = styled.nav`
   display: flex;
@@ -97,7 +85,6 @@ const Nav = styled.nav`
 `;
 
 const Logo = styled.h1`
-  font-family: "Permanent Marker", cursive;
   font-size: 3rem;
   color: #628141;
   margin: 0;

@@ -138,11 +138,30 @@ npm start --prefix client
     - Ran all your migrations successfully
     - seeded jobs
 
+* for this project i had a small dashboard for employers but I had to cancel the idea
+    I wanted to let employers post jobs and control and edit posted jobs but then I had
+    to consider authorizing the jobs posting, I did not want jobs to be posted infinitly
+    especially that i dont had a way of verify its a real company posting jobs and am not
+    charging client to post jobs so I cancelled the idea and worked more on employee 
+    features
+
 ---
 
 ## Lessons from this project
 
 * I was using SQLite for development and learnt that its not ideal for production as it cant hold data for long
+* previous Ruby on Rails projects i used to use the gem Faker to generate fake seeding data but for this project
+    the gem had fake jobs in general but not specific jobs for developers eg:
+        Faker::Job.title #=> "Lead Accounting Associate"
+        Faker::Job.field #=> "Manufacturing"
+        Faker::Job.seniority #=> "Lead"
+        Faker::Job.position #=> "Supervisor"
+        Faker::Job.key_skill #=> "Teamwork"
+        Faker::Job.employment_type #=> "Full-time"
+        Faker::Job.education_level #=> "Bachelor"
+    
+    so for this project i wanted to wrtie a seed file to generate jobs
+
 
 ## 🚀 Future Improvements
 
@@ -158,4 +177,4 @@ npm start --prefix client
 
 ## 📬 Contact
 
-To post jobs, email: **denofdev@gmail.com**# Den of Devs Job Board  
+**eng.mazin.m@gmail.com**

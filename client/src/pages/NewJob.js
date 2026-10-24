@@ -164,7 +164,6 @@ const WrapperChild = styled.div`
 `;
 
 const Logo = styled.h2`
-  font-family: "Times New Roman", cursive;
   font-size: 3rem;
   color: #628141;
   margin: 0;

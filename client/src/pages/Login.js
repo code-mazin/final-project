@@ -2,13 +2,14 @@ import { useState } from "react";
 import styled from "styled-components";
 import LoginForm from "../components/LoginForm";
 import SignUpForm from "../components/SignUpForm";
-import { Button } from "../styles";
+import { Button, Box } from "../styles";
 
 function Login({ onLogin }) {
     const [showLogin, setShowLogin] = useState(true);
 
     return (
         <Wrapper>
+            <Box>
             {/* <Logo>Den of Devs </Logo> */}
             {showLogin ? (
                 <>
@@ -33,17 +34,11 @@ function Login({ onLogin }) {
                 </p>
                 </>
             )}
+        </Box>
         </Wrapper>
     );
 }
 
-
-// const Logo = styled.h1`
-//   font-family: "Permanent Marker", cursive;
-//   font-size: 3rem;
-//   color: #628141;
-//   margin: 8px 0 16px;
-// `;
 
 const Wrapper = styled.section`
   max-width: 500px;
