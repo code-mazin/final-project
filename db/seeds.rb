@@ -35,12 +35,12 @@ work_from_home: false, published: true, job_type: "part-time", desc: "Our client
 a permanent opportunity for a Mid level Ruby Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
-job7 = Job.create(title: "React Developer", salary: "110,000", technology: "React", email: "AcademyXi@x.com",
+job6 = Job.create(title: "React Developer", salary: "110,000", technology: "React", email: "AcademyXi@x.com",
 work_from_home: false, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level React Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
 
-job8 = Job.create(title: "BackEnd Developer", salary: "100,000", technology: "NodeJs", email: "AcademyXi@x.com",
+job7 = Job.create(title: "BackEnd Developer", salary: "100,000", technology: "NodeJs", email: "AcademyXi@x.com",
 work_from_home: false, published: true, job_type: "part-time", desc: "Our client is a software business based in Sydney and through continued growth have 
 a permanent opportunity for a Mid level NodeJs Developer to join the team. This is an exciting opportunity to join a fast growing
  business building a new product and be able to contribute to the full product")
