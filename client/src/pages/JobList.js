@@ -83,11 +83,11 @@ function JobList({ user, savedJobs, setSavedJobs}) {
                 </FilterButton>
 
                 <FilterButton
-                    active={jobType === "part-time"}
+                    active={jobType === "freelance"}
                     type="button"
-                    onClick={() => setJobType("part-time")}
+                    onClick={() => setJobType("freelance")}
                 >
-                    Part-time
+                    Freelance
                 </FilterButton>
             </Box>
             <br></br>

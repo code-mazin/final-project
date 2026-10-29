@@ -145,6 +145,8 @@ npm start --prefix client
     charging client to post jobs so I cancelled the idea and worked more on employee 
     features
 
+* Filtering Jobs
+
 ---
 
 ## Lessons from this project
@@ -161,13 +163,12 @@ npm start --prefix client
         Faker::Job.education_level #=> "Bachelor"
     
     so for this project i wanted to wrtie a seed file to generate jobs
+* 
 
 
 ## 🚀 Future Improvements
 
 - Employer user dashboard
-- Jobs types (full-time, part-time, contract)
-- filtering (Job type)
 - Pagination for job listings
 - Improve UI/UX design
 - Notifications: Notify users of new job postings that match their search
